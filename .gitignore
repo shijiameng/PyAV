@@ -11,6 +11,7 @@
 
 # Build products
 *.c
+*.dSYM
 *.egg-info
 *.so
 /*.sdf
