@@ -5,18 +5,24 @@ from cpython cimport Py_INCREF, PyTuple_New, PyTuple_SET_ITEM
 from av.plane cimport Plane
 
 
+frame_count = 0
+
 cdef class Frame(object):
 
     """Frame Base Class"""
-    
+
     def __cinit__(self, *args, **kwargs):
+        global frame_count
+        frame_count += 1
         with nogil:
             self.ptr = lib.avcodec_alloc_frame()
             lib.avcodec_get_frame_defaults(self.ptr)
 
     def __dealloc__(self):
+        global frame_count
+        frame_count -= 1
         with nogil: lib.avcodec_free_frame(&self.ptr)
-    
+
     def __repr__(self):
         return 'av.%s #%d at 0x%x>' % (
             self.__class__.__name__,
@@ -45,7 +51,7 @@ cdef class Frame(object):
                 self.ptr.pts = value
 
     property time:
-    
+
         def __get__(self):
             if self.ptr.pts == lib.AV_NOPTS_VALUE:
                 return None
@@ -91,4 +97,3 @@ cdef class Frame(object):
             self.ptr.pkt_pts = other.ptr.pkt_pts
             self.ptr.pkt_dts = other.ptr.pkt_dts
             self.ptr.pts = other.ptr.pts
-
