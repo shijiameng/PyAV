@@ -37,12 +37,14 @@ echo ./configure
     --disable-static \
     --enable-shared \
     --disable-doc \
+    --disable-stripping \
+    --enable-debug \
     --prefix="$PYAV_LIBRARY_PREFIX" \
     || exit 2
 echo
 
 echo make
-make -j4 || exit 3
+make -j12 || exit 3
 echo
 
 echo make install
