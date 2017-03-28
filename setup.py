@@ -601,6 +601,98 @@ class CleanCommand(clean):
                 log.info("'%s' does not exist -- can't clean it", 'src')
 
 
+class PreprocessCommand(Command):
+
+    user_options = [
+        ('build-temp=', 't', "directory for temporary files (build by-products)"),
+    ]
+
+    def initialize_options(self):
+        self.build_temp = None
+    def finalize_options(self):
+        self.set_undefined_options('build',
+            ('build_temp', 'build_temp'),
+        )
+
+    def run(self):
+        for ext in self.distribution.ext_modules:
+            for i, src in enumerate(ext.sources):
+
+                if not src.endswith('.pyx'):
+                    continue
+
+                ext.sources[i] = self.preprocess(src)
+
+                pxd = os.path.splitext(src)[0] + '.pxd'
+                if os.path.exists(pxd):
+                    self.preprocess(pxd)
+
+
+    def preprocess(self, src):
+
+        dst = os.path.join(self.build_temp, 'preprocess', src.lstrip(os.path.sep))
+        try:
+            src_time = os.path.getmtime(src)
+            dst_time = os.path.getmtime(dst)
+        except OSError as e:
+            src_time = dst_time = None
+
+        if not dst_time or src_time > dst_time:
+            self._preprocess(src, dst)
+
+        return dst
+
+    def _preprocess(self, src_path, dst_path):
+
+        print('Preprocessing', src_path)
+
+        dir_ = os.path.dirname(dst_path)
+        if not os.path.exists(dir_):
+            os.makedirs(dir_)
+
+        # We need to make dummy __init__.py files for Cython to detect.
+        src_chunks = src_path.split(os.path.sep)
+        for i in range(1, len(src_chunks)):
+            init_path = os.path.join(self.build_temp, 'preprocess', os.path.join(*src_chunks[:i]), '__init__.py')
+            open(init_path, 'w').close()
+
+        src = open(src_path).read()
+        src_chunks = re.split(r'([\t ]*){{(.+?)}}', src)
+        dst_chunks = []
+
+        while src_chunks:
+
+            dst_chunks.append(src_chunks.pop(0))
+            if not src_chunks:
+                break
+
+            space = src_chunks.pop(0)
+            expr = src_chunks.pop(0).strip()
+
+            content = self._eval(expr)
+            lines = content.splitlines()
+
+            first = lines[0]
+            pre_strip = len(first) - len(first.lstrip())
+
+            lines = [space + x[pre_strip:] for i, x in enumerate(lines)]
+            content = '\n'.join(lines)
+
+            dst_chunks.append(content)
+
+        with open(dst_path, 'w') as fh:
+            for chunk in dst_chunks:
+                fh.write(chunk)
+
+    def _eval(self, expr):
+        namespace = {
+            'pass_through_property': lambda *args: '# A test.\n# %r' % (args, )
+        }
+        return eval(expr, namespace)
+
+
+
+
 class CythonizeCommand(Command):
 
     user_options = []
@@ -685,6 +777,7 @@ class BuildExtCommand(build_ext):
             unique_extend(ext.library_dirs, self.library_dirs)
             unique_extend(ext.libraries, self.libraries)
 
+        self.run_command('preprocess')
         self.run_command('cythonize')
 
         return build_ext.run(self)
@@ -710,6 +803,7 @@ setup(
         'build_ext': BuildExtCommand,
         'clean': CleanCommand,
         'config': ConfigCommand,
+        'preprocess': PreprocessCommand,
         'cythonize': CythonizeCommand,
         'doctor': DoctorCommand,
         'reflect': ReflectCommand,
