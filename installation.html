@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Installation &#8212; PyAV 0.4.0.dev0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.4.0.dev0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="PyAV 0.4.0.dev0 documentation" href="index.html" />
+    <link rel="next" title="Examples" href="examples.html" />
+    <link rel="prev" title="More About PyAV" href="about.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="examples.html" title="Examples"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="about.html" title="More About PyAV"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PyAV 0.4.0.dev0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="conda">
+<h2>Conda<a class="headerlink" href="#conda" title="Permalink to this headline">¶</a></h2>
+<p>Due to the complexity of the dependencies, PyAV is not always the easiest Python package to install. The most straight-foward install is via <a class="reference external" href="https://conda-forge.github.io">conda-forge</a>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">av</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
+</pre></div>
+</div>
+<p>See the <a class="reference external" href="https://conda.io/docs/install/quick.html">Conda quick install</a> docs to get started with (mini)Conda.</p>
+</div>
+<div class="section" id="dependencies">
+<h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
+<p>PyAV depends upon the following components of the underlying libraries:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">libavformat</span></code></li>
+<li><code class="docutils literal"><span class="pre">libavcodec</span></code></li>
+<li><code class="docutils literal"><span class="pre">libavdevice</span></code></li>
+<li><code class="docutils literal"><span class="pre">libavutil</span></code></li>
+<li><code class="docutils literal"><span class="pre">libswscale</span></code></li>
+<li><code class="docutils literal"><span class="pre">libswresample</span></code> or <code class="docutils literal"><span class="pre">libavresample</span></code></li>
+</ul>
+<p>and a few other tools in general:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">pkg-config</span></code></li>
+<li>Python&#8217;s development headers</li>
+</ul>
+<div class="section" id="mac-os-x">
+<h3>Mac OS X<a class="headerlink" href="#mac-os-x" title="Permalink to this headline">¶</a></h3>
+<p>On <strong>Mac OS X</strong>, <a class="reference external" href="http://brew.sh/">Homebrew</a> saves the day:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">brew</span> <span class="n">install</span> <span class="n">ffmpeg</span> <span class="n">pkg</span><span class="o">-</span><span class="n">config</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ubuntu-14-04-lts">
+<h3>Ubuntu &gt;= 14.04 LTS<a class="headerlink" href="#ubuntu-14-04-lts" title="Permalink to this headline">¶</a></h3>
+<p>On <strong>Ubuntu 14.04 LTS</strong> everything can come from the default sources:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># General dependencies</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">python</span><span class="o">-</span><span class="n">dev</span> <span class="n">pkg</span><span class="o">-</span><span class="n">config</span>
+
+<span class="c1"># Library components</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> \
+    <span class="n">libavformat</span><span class="o">-</span><span class="n">dev</span> <span class="n">libavcodec</span><span class="o">-</span><span class="n">dev</span> <span class="n">libavdevice</span><span class="o">-</span><span class="n">dev</span> \
+    <span class="n">libavutil</span><span class="o">-</span><span class="n">dev</span> <span class="n">libswscale</span><span class="o">-</span><span class="n">dev</span> <span class="n">libavresample</span><span class="o">-</span><span class="n">dev</span> <span class="n">libavfilter</span><span class="o">-</span><span class="n">dev</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ubuntu-12-04-lts">
+<h3>Ubuntu 12.04 LTS<a class="headerlink" href="#ubuntu-12-04-lts" title="Permalink to this headline">¶</a></h3>
+<p>On <strong>Ubuntu 12.04 LTS</strong> you will be unable to satisfy these requirements with the default package sources. We recommend compiling and installing FFmpeg or Libav from source. For FFmpeg:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">ffmpeg</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">releases</span><span class="o">/</span><span class="n">ffmpeg</span><span class="o">-</span><span class="mf">2.7</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
+<span class="n">tar</span> <span class="o">-</span><span class="n">xjf</span> <span class="n">ffmpeg</span><span class="o">-</span><span class="mf">2.7</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
+<span class="n">cd</span> <span class="n">ffmpeg</span><span class="o">-</span><span class="mf">2.7</span>
+
+<span class="o">./</span><span class="n">configure</span> <span class="o">--</span><span class="n">disable</span><span class="o">-</span><span class="n">static</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">shared</span> <span class="o">--</span><span class="n">disable</span><span class="o">-</span><span class="n">doc</span>
+<span class="n">make</span>
+<span class="n">sudo</span> <span class="n">make</span> <span class="n">install</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://gist.github.com/mkassner/1caa1b45c19521c884d5">See this script</a> for a very detailed installation of all dependencies.</p>
+</div>
+<div class="section" id="windows">
+<h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
+<p>It is possible to build PyAV on Windows without Conda by installing FFmpeg yourself, e.g. from the <a class="reference external" href="https://ffmpeg.zeranoe.com/builds/">shared and dev packages</a>.</p>
+<p>Unpack them somewhere (like <code class="docutils literal"><span class="pre">C:\ffmpeg</span></code>), and then <a class="reference internal" href="#build-on-windows"><span class="std std-ref">tell PyAV where they are located</span></a>.</p>
+</div>
+</div>
+<div class="section" id="pyav">
+<h2>PyAV<a class="headerlink" href="#pyav" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="via-pypi-cheeseshop">
+<h3>Via PyPI/CheeseShop<a class="headerlink" href="#via-pypi-cheeseshop" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ pip install av
+</pre></div>
+</div>
+</div>
+<div class="section" id="via-source">
+<h3>Via Source<a class="headerlink" href="#via-source" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span># Get PyAV from GitHub.
+$ git clone git@github.com:mikeboers/PyAV.git
+$ cd PyAV
+
+# Prep a virtualenv.
+$ source scripts/activate.sh
+
+# Install basic requirements.
+$ pip install -r tests/requirements.txt
+
+# Optionally build FFmpeg.
+$ ./scripts/build-deps.sh
+
+# Build PyAV.
+$ make
+# or
+$ python setup.py build_ext --inplace
+</pre></div>
+</div>
+<p>On <strong>Mac OS X</strong> you may have issues with regards to Python expecting gcc but finding clang. Try to export the following before installation:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">ARCHFLAGS</span><span class="o">=-</span><span class="n">Wno</span><span class="o">-</span><span class="n">error</span><span class="o">=</span><span class="n">unused</span><span class="o">-</span><span class="n">command</span><span class="o">-</span><span class="n">line</span><span class="o">-</span><span class="n">argument</span><span class="o">-</span><span class="n">hard</span><span class="o">-</span><span class="n">error</span><span class="o">-</span><span class="ow">in</span><span class="o">-</span><span class="n">future</span>
+</pre></div>
+</div>
+<p id="build-on-windows">On <strong>Windows</strong> you must indicate the location of your FFmpeg, e.g.:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">build</span> <span class="o">--</span><span class="n">ffmpeg</span><span class="o">-</span><span class="nb">dir</span><span class="o">=</span><span class="n">C</span><span class="p">:</span>\<span class="n">ffmpeg</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo-250.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Installation</a><ul>
+<li><a class="reference internal" href="#conda">Conda</a></li>
+<li><a class="reference internal" href="#dependencies">Dependencies</a><ul>
+<li><a class="reference internal" href="#mac-os-x">Mac OS X</a></li>
+<li><a class="reference internal" href="#ubuntu-14-04-lts">Ubuntu &gt;= 14.04 LTS</a></li>
+<li><a class="reference internal" href="#ubuntu-12-04-lts">Ubuntu 12.04 LTS</a></li>
+<li><a class="reference internal" href="#windows">Windows</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pyav">PyAV</a><ul>
+<li><a class="reference internal" href="#via-pypi-cheeseshop">Via PyPI/CheeseShop</a></li>
+<li><a class="reference internal" href="#via-source">Via Source</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="about.html"
+                        title="previous chapter">More About PyAV</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="examples.html"
+                        title="next chapter">Examples</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/installation.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="examples.html" title="Examples"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="about.html" title="More About PyAV"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PyAV 0.4.0.dev0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Mike Boers.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

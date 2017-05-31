@@ -1,0 +1,307 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Changelog &#8212; PyAV 0.4.0.dev0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.4.0.dev0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="PyAV 0.4.0.dev0 documentation" href="index.html" />
+    <link rel="next" title="License" href="license.html" />
+    <link rel="prev" title="Wrapped C Types and Functions" href="includes.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="license.html" title="License"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="includes.html" title="Wrapped C Types and Functions"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PyAV 0.4.0.dev0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="changelog">
+<span id="id1"></span><h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<p>We are operating with semantic versioning &lt;<a class="reference external" href="http://semver.org/">http://semver.org/</a>&gt;. However,
+we are using v0.x.y as our heavy development period, and will increment <code class="docutils literal"><span class="pre">x</span></code>
+to signal a major change (i.e. backwards incompatibilities) and increment
+<code class="docutils literal"><span class="pre">y</span></code> as a minor change (i.e. backwards compatible features).</p>
+<div class="section" id="v0-4-0-dev0">
+<h2>v0.4.0.dev0<a class="headerlink" href="#v0-4-0-dev0" title="Permalink to this headline">¶</a></h2>
+<p>Major:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">CodecContext</span></code> has taken over encoding/decoding, and can work in isolation
+of streams/containers.</li>
+<li><code class="docutils literal"><span class="pre">Stream.encode</span></code> returns a list of packets, instead of a single packet.</li>
+<li><code class="docutils literal"><span class="pre">AudioFifo</span></code> and <code class="docutils literal"><span class="pre">AudioResampler</span></code> will raise <code class="docutils literal"><span class="pre">ValueError</span></code> if input frames
+inconsistant <code class="docutils literal"><span class="pre">pts</span></code>.</li>
+<li><code class="docutils literal"><span class="pre">time_base</span></code> use has been revisited across the codebase; timing code may
+need to be reconsidered.</li>
+</ul>
+<p>Minor:</p>
+<ul class="simple">
+<li>Added <code class="docutils literal"><span class="pre">Packet.is_keyframe</span></code> and <code class="docutils literal"><span class="pre">Packet.is_corrupt</span></code>. (#226.)</li>
+<li>Many more <code class="docutils literal"><span class="pre">time_base</span></code>, <code class="docutils literal"><span class="pre">pts</span></code> and other attributes are writeable.</li>
+</ul>
+<p>Fixes:</p>
+<ul class="simple">
+<li>Build doesn&#8217;t fail if you don&#8217;t have git installed. (#184.)</li>
+</ul>
+</div>
+<div class="section" id="v0-3-3">
+<h2>v0.3.3<a class="headerlink" href="#v0-3-3" title="Permalink to this headline">¶</a></h2>
+<p>Fixes:</p>
+<ul class="simple">
+<li>Fix segfault due to buffer overflow in handling of stream options.
+(#163 and #169.)</li>
+<li>Fix segfault due to seek not properly checking if codecs were open before
+using avcodec_flush_buffers. (#201.)</li>
+</ul>
+</div>
+<div class="section" id="v0-3-2">
+<h2>v0.3.2<a class="headerlink" href="#v0-3-2" title="Permalink to this headline">¶</a></h2>
+<p>Minor:</p>
+<ul class="simple">
+<li>Expose basics of avfilter via <code class="docutils literal"><span class="pre">Filter</span></code>.</li>
+<li>Add <code class="docutils literal"><span class="pre">Packet.time_base</span></code>.</li>
+<li>Add <code class="docutils literal"><span class="pre">AudioFrame.to_nd_array</span></code> to match same on <code class="docutils literal"><span class="pre">VideoFrame</span></code>.</li>
+<li>Update Windows build process.</li>
+</ul>
+<p>Fixes:</p>
+<ul class="simple">
+<li>Further improvements to the logging system, continued from #128.</li>
+</ul>
+</div>
+<div class="section" id="v0-3-1">
+<h2>v0.3.1<a class="headerlink" href="#v0-3-1" title="Permalink to this headline">¶</a></h2>
+<p>Minor:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">av.logging.set_log_after_shutdown</span></code> renamed to <code class="docutils literal"><span class="pre">set_print_after_shutdown</span></code></li>
+<li>Repeating log messages will be skipped, much like ffmpeg&#8217;s does by default</li>
+</ul>
+<p>Fixes:</p>
+<ul class="simple">
+<li>Fix memory leak in logging system when under heavy logging loads while
+threading (#128 with help from &#64;mkassner and &#64;ksze)</li>
+</ul>
+</div>
+<div class="section" id="v0-3-0">
+<h2>v0.3.0<a class="headerlink" href="#v0-3-0" title="Permalink to this headline">¶</a></h2>
+<p>Major:</p>
+<ul class="simple">
+<li>Python IO can write</li>
+<li>Improve build system to use Python&#8217;s C compiler for function detection;
+build system is much more robust</li>
+<li>MSVC support (#115 by &#64;vidartf)</li>
+<li>Continuous integration on Windows via AppVeyor (by &#64;vidartf)</li>
+</ul>
+<p>Minor:</p>
+<ul class="simple">
+<li>Add <code class="docutils literal"><span class="pre">Packet.decode_one()</span></code> to skip packet flushing for codecs that would
+otherwise error</li>
+<li><code class="docutils literal"><span class="pre">StreamContainer</span></code> for easier selection of streams</li>
+<li>Add buffer protocol support to Packet</li>
+</ul>
+<p>Fixes:</p>
+<ul class="simple">
+<li>Fix bug when using Python IO on files larger than 2GB (#109 by &#64;xxr3376)</li>
+<li>Fix usage of changed Pillow API</li>
+</ul>
+<p>Known Issues:</p>
+<ul class="simple">
+<li>VideoFrame is suspected to leak memory in narrow cases on Linux (#128)</li>
+</ul>
+</div>
+<div class="section" id="v0-2-4">
+<h2>v0.2.4<a class="headerlink" href="#v0-2-4" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fix library search path for current Libav/Ubuntu 14.04 (#97)</li>
+<li>explicitly include all sources to combat 0.2.3 release problem (#100)</li>
+</ul>
+</div>
+<div class="section" id="v0-2-3">
+<h2>v0.2.3<a class="headerlink" href="#v0-2-3" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">There was an issue with the PyPI distribution in which it required
+Cython to be installed.</p>
+</div>
+<p>Major:</p>
+<ul class="simple">
+<li>Python IO.</li>
+<li>Agressively releases GIL</li>
+<li>Add experimental Windows build (#84)</li>
+</ul>
+<p>Minor:</p>
+<ul class="simple">
+<li>Several new Stream/Packet/Frame attributes</li>
+</ul>
+<p>Fixes:</p>
+<ul class="simple">
+<li>Fix segfault in audio handling (#86 and #93)</li>
+<li>Fix use of PIL/Pillow API (#85)</li>
+<li>Fix bad assumptions about plane counts (#76)</li>
+</ul>
+</div>
+<div class="section" id="v0-2-2">
+<h2>v0.2.2<a class="headerlink" href="#v0-2-2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Cythonization in setup.py; mostly a development issue.</li>
+<li>Fix for av.InputContainer.size over 2**31.</li>
+</ul>
+</div>
+<div class="section" id="v0-2-1">
+<h2>v0.2.1<a class="headerlink" href="#v0-2-1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Python 3 compatibility!</li>
+<li>Build process fails if missing libraries.</li>
+<li>Fix linking of libavdevices.</li>
+</ul>
+</div>
+<div class="section" id="v0-2-0">
+<h2>v0.2.0<a class="headerlink" href="#v0-2-0" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This version has an issue linking in libavdevices, and very likely
+will not work for you.</p>
+</div>
+<p>It sure has been a long time since this was released, and there was a lot of
+arbitrary changes that come with us wrapping an API as we are discovering it.
+Changes include, but are not limited to:</p>
+<ul class="simple">
+<li>Audio encoding.</li>
+<li>Exposing planes and buffers.</li>
+<li>Descriptors for channel layouts, video and audio formats, etc..</li>
+<li>Seeking.</li>
+<li>Many many more properties on all of the objects.</li>
+<li>Device support (e.g. webcams).</li>
+</ul>
+</div>
+<div class="section" id="v0-1-0">
+<h2>v0.1.0<a class="headerlink" href="#v0-1-0" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>FIRST PUBLIC RELEASE!</li>
+<li>Container/video/audio formats.</li>
+<li>Audio layouts.</li>
+<li>Decoding video/audio/subtitles.</li>
+<li>Encoding video.</li>
+<li>Audio FIFOs and resampling.</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo-250.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#v0-4-0-dev0">v0.4.0.dev0</a></li>
+<li><a class="reference internal" href="#v0-3-3">v0.3.3</a></li>
+<li><a class="reference internal" href="#v0-3-2">v0.3.2</a></li>
+<li><a class="reference internal" href="#v0-3-1">v0.3.1</a></li>
+<li><a class="reference internal" href="#v0-3-0">v0.3.0</a></li>
+<li><a class="reference internal" href="#v0-2-4">v0.2.4</a></li>
+<li><a class="reference internal" href="#v0-2-3">v0.2.3</a></li>
+<li><a class="reference internal" href="#v0-2-2">v0.2.2</a></li>
+<li><a class="reference internal" href="#v0-2-1">v0.2.1</a></li>
+<li><a class="reference internal" href="#v0-2-0">v0.2.0</a></li>
+<li><a class="reference internal" href="#v0-1-0">v0.1.0</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="includes.html"
+                        title="previous chapter">Wrapped C Types and Functions</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="license.html"
+                        title="next chapter">License</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/changelog.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="license.html" title="License"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="includes.html" title="Wrapped C Types and Functions"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PyAV 0.4.0.dev0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Mike Boers.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>
