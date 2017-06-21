@@ -5,21 +5,38 @@ from mako.template import Template
 
 source = '''
 
-def __mixin__ cached_prop(x):
+def __mixin__ cached_property_h(name, type='object'):
+    cdef ${type} __cached_${name}
 
-    cdef _calc_${x}(self):
-        @{__body__}
-
-    cdef _cached_${x}
+def __mixin__ cached_property(x, cast=None):
+    <% body = capture(caller.body) %>
+    property __uncached_${x}(self):
+        % if '__get__' in body:
+        @{body}
+        % else:
+        def __get__(self):
+            @{body}
+        % endif
 
     property ${x}:
+
         def __get__(self):
-            if self._cached_${x} is None:
-                self._cached_${x} = self._calc_${x}()
-            return self._cached_${x}
+            if self.__cached_${x} is None:
+                value = self.__uncached_${x}
+                % if cast:
+                value = ${cast}(value)
+                % endif
+                self.__cached_${x} = value
+            return self.__cached_${x}
+
+        % if '__set__' in body:
+        def __set__(self, value):
+            self.__uncached_${x} = value
+            self.__cached_${x} = self.__uncached_${x}
+        % endif
 
 
-def __mixin__ notify_prop(public, private):
+def @@notify_prop(public, private):
 
     property ${public}:
         def __get__(self):
@@ -32,8 +49,20 @@ def __mixin__ notify_prop(public, private):
 
 cdef class A(object):
 
-    __mixin__ cached_prop('name'):
+    @@cached_property_h('noget', 'int')
+
+    @@cached_property('noget'):
         return 123
+
+    @@cached_property('hasget', cast='tuple'):
+        def __get__(self):
+            return 456
+
+    @@cached_property('hasset'):
+        def __get__(self):
+            return 789
+        def __set__(self, value):
+            self._hasset = value # broken.
 
     __mixin__ notify_prop('format', '_format'):
         self._rebuild_format()
@@ -58,14 +87,13 @@ def preprocess(source):
         while source and ((not source[0][1].strip()) or (source[0][0] > lvl and source[0][1].strip())):
             body.append(source.pop(0)[1])
         body = '\n'.join(body)
-        #body = reindent(0)(body)
         return body
 
     while source:
 
         lvl, line = source.pop(0)
 
-        m = re.match(r'([\t ]*)def __mixin__ (.+?):\s*$', line)
+        m = re.match(r'([\t ]*)def\s+(?:@@\s*|__mixin__\s+)(.+?):\s*$', line)
         if m:
             body = get_body()
             body = reindent(0)(body)
@@ -75,7 +103,7 @@ def preprocess(source):
             output.append('</%def>\n\n')
             continue
 
-        m = re.match(r'([\t ]*)__mixin__ (.+?)(:?)\s*$', line)
+        m = re.match(r'([\t ]*)(?:@@\s*|__mixin__\s+)(.+?)(:?)\s*$', line)
         if m:
             indent, expr, has_body = m.groups()
             indent = len(indent.replace('\t', 8 * 'x'))
