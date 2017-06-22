@@ -47,7 +47,22 @@ def @@notify_prop(public, private):
             self.${private} = new
 
 
+
+def __mixin__ init_guard():
+
+    <%
+        if '__did_cimport_cinit_sentinel' not in globals():
+            __did_cimport_cinit_sentinel = True
+            __prologue__.append('from av.utils cimport cinit_sentinel')
+    %>
+
+    def __cinit__(self, sentinel, *args, **kwargs):
+        if sentinel is not cinit_sentinel:
+            raise RuntimeError('Cannot construct ' + self.__class__.__name__)
+
 cdef class A(object):
+
+    @@init_guard()
 
     @@cached_property_h('noget', 'int')
 
@@ -150,6 +165,14 @@ template = Template(source,
     preprocessor=preprocess,
 )
 
-print template.render()
+prologue = []
+epilogue = []
 
+
+rendered = template.render(__prologue__=prologue, __epilogue__=epilogue)
+for x in prologue:
+    print x
+print rendered
+for x in epilogue:
+    print x
 
