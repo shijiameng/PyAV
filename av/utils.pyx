@@ -10,6 +10,67 @@ cimport libav as lib
 from av.logging cimport _get_last_error
 
 
+# === CINIT SENTINELS ===
+# =======================
+
+cdef object cinit_sentinel = object()
+
+<%!
+def assert_cinit_sentinel(context):
+    # Abusing Mako a little here.
+    toplevel = context.get('self')
+    prologue = context.get('__prologue__')
+    if not getattr(toplevel, '_did_cimport_cinit_sentinel', False):
+        toplevel._did_cimport_cinit_sentinel = True
+        prologue.append('from av.utils cimport cinit_sentinel')
+%>
+
+def __mixin__ def_private_cinit(arg1='sentinel', args=''):
+    <% assert_cinit_sentinel(context) %>
+    def __cinit__(self, ${arg1}${', ' if args else ''}${args}):
+        if ${arg1} is not cinit_sentinel:
+            raise RuntimeError('Cannot construct ' + self.__class__.__name__)
+        @{__body__}
+
+def __mixin__ alloc_private(cls, args=''):
+    <% assert_cinit_sentinel(context) %>
+    ${cls}(cinit_sentinel${', ' if args else ''}${args})
+
+
+# === CACHED PROPERTIES ===
+# =========================
+
+def __mixin__ cdef_cached_property(name, ctype='object'):
+    cdef ${ctype} __cached_${name}
+
+def __mixin__ cached_property(x, cast=None):
+
+    property __uncached_${x}:
+        % if '__get__' in __body__:
+        @{__body__}
+        % else:
+        def __get__(self):
+            @{__body__}
+        % endif
+
+    property ${x}:
+
+        def __get__(self):
+            if self.__cached_${x} is None:
+                value = self.__uncached_${x}
+                % if cast:
+                value = ${cast}(value)
+                % endif
+                self.__cached_${x} = value
+            return self.__cached_${x}
+
+        % if '__set__' in __body__:
+        def __set__(self, value):
+            self.__uncached_${x} = value
+            self.__cached_${x} = self.__uncached_${x}
+        % endif
+
+
 # === ERROR HANDLING ===
 # ======================
 
@@ -127,7 +188,6 @@ cdef bytes _encode(s, encoding, errors):
 cdef dict avdict_to_dict(lib.AVDictionary *input, str encoding=None, str errors='strict'):
     if _py3k and encoding is None:
         encoding = 'utf8'
-
     cdef lib.AVDictionaryEntry *element = NULL
     cdef dict output = {}
     while True:

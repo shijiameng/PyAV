@@ -1,3 +1,5 @@
+mimport av.utils as utils
+
 cimport libav as lib
 
 
@@ -16,5 +18,6 @@ cdef class Descriptor(object):
 
     cdef object _options # Option list cache.
 
+    @@utils.cdef_cached_property('options')
 
 cdef Descriptor wrap_avclass(const lib.AVClass*)

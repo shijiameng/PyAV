@@ -1,14 +1,13 @@
 cimport libav as lib
+mimport av.utils as utils
 
 from av.utils cimport flag_in_bitfield
 
 
-cdef object _cinit_sentinel = object()
-
 cdef Option wrap_option(tuple choices, lib.AVOption *ptr):
     if ptr == NULL:
         return None
-    cdef Option obj = Option(_cinit_sentinel)
+    cdef Option obj = @{utils.alloc_private('Option')}
     obj.ptr = ptr
     obj.choices = choices
     return obj
@@ -61,9 +60,7 @@ cpdef enum OptionFlags:
 
 cdef class BaseOption(object):
 
-    def __cinit__(self, sentinel):
-        if sentinel is not _cinit_sentinel:
-            raise RuntimeError('Cannot construct av.%s' % self.__class__.__name__)
+    @@utils.def_private_cinit()
 
     property name:
         def __get__(self):
@@ -156,7 +153,7 @@ cdef class Option(BaseOption):
 cdef OptionChoice wrap_option_choice(lib.AVOption *ptr, bint is_default):
     if ptr == NULL:
         return None
-    cdef OptionChoice obj = OptionChoice(_cinit_sentinel)
+    cdef OptionChoice obj = @{utils.alloc_private('OptionChoice')}
     obj.ptr = ptr
     obj.is_default = is_default
     return obj
@@ -167,6 +164,16 @@ cdef class OptionChoice(BaseOption):
     Represents AV_OPT_TYPE_CONST options which are essentially
     choices of non-const option with same unit.
     """
+
+    @@utils.def_private_cinit()
+
+    property name:
+        def __get__(self):
+            return self.ptr.name
+
+    property help:
+        def __get__(self):
+            return self.ptr.help if self.ptr.help != NULL else ''
 
     property value:
         def __get__(self):

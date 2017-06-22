@@ -17,6 +17,10 @@ import platform
 import re
 import sys
 
+sys.path.insert(0, os.path.dirname(__file__))
+
+import preprocess
+
 try:
     # This depends on _winreg, which is not availible on not-Windows.
     from distutils.msvc9compiler import MSVCCompiler as MSVC9Compiler
@@ -679,41 +683,10 @@ class PreprocessCommand(Command):
             init_path = os.path.join(self.build_temp, 'preprocess', os.path.join(*src_chunks[:i]), '__init__.py')
             open(init_path, 'w').close()
 
-        src = open(src_path).read()
-        src_chunks = re.split(r'([\t ]*){{(.+?)}}', src)
-        dst_chunks = []
-
-        while src_chunks:
-
-            dst_chunks.append(src_chunks.pop(0))
-            if not src_chunks:
-                break
-
-            space = src_chunks.pop(0)
-            expr = src_chunks.pop(0).strip()
-
-            content = self._eval(expr)
-            lines = content.splitlines()
-
-            first = lines[0]
-            pre_strip = len(first) - len(first.lstrip())
-
-            lines = [space + x[pre_strip:] for i, x in enumerate(lines)]
-            content = '\n'.join(lines)
-
-            dst_chunks.append(content)
+        new_source = preprocess.render(src_path)
 
         with open(dst_path, 'w') as fh:
-            for chunk in dst_chunks:
-                fh.write(chunk)
-
-    def _eval(self, expr):
-        namespace = {
-            'pass_through_property': lambda *args: '# A test.\n# %r' % (args, )
-        }
-        return eval(expr, namespace)
-
-
+            fh.write(new_source)
 
 
 class CythonizeCommand(Command):
