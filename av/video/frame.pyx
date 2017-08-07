@@ -236,38 +236,48 @@ cdef class VideoFrame(Frame):
         from PIL import Image
         return Image.frombuffer("RGB", (self.width, self.height), self.reformat(format="rgb24", **kwargs).planes[0], "raw", "RGB", 0, 1)
 
-    def to_nd_array(self, **kwargs):
+    def to_ndarray(self, **kwargs):
         """Get a numpy array of this frame.
 
         Any ``**kwargs`` are passed to :meth:`VideoFrame.reformat`.
 
         """
 
-        cdef VideoFrame frame = self.reformat(**kwargs)
-        if len(frame.planes) != 1:
-            raise ValueError('Cannot conveniently get numpy array from multiplane frame')
-
         import numpy as np
         from numpy.lib.stride_tricks import as_strided
 
-        # We only suppose this convenience for a few types.
+        cdef VideoFrame frame = self.reformat(**kwargs) if kwargs else self
+
+        if len(frame.planes) != 1:
+            raise ValueError('Cannot conveniently get numpy array from multiplane frame')
+        cdef VideoPlane plane = frame.planes[0]
+
+        # We only provide this convenience for a few types.
         # TODO: Make this more general (if we can)
-        plane = frame.planes[0]
+        # TODO: Figure out how we want to provide this via the Buffer interface,
+        #       and just do that.
+
         if frame.format.name in ('rgb24', 'bgr24'):
-            data_type = np.dtype(np.uint8)
+            dtype = np.dtype(np.uint8)
             channels = 3
-            arrshape =  (plane.height, plane.width, channels)
-            arrstrides = (plane.line_size, channels, data_type.itemsize)
+            shape = (plane.height, plane.width, channels)
+            strides = (plane.line_size, channels * dtype.itemsize, dtype.itemsize)
+
         elif frame.format.name == ('gray16le', 'gray16be'):
-            data_type = np.dtype('<u2')
-            channels = 1
-            arrshape =  (plane.height, plane.width)
-            arrstrides = (plane.line_size, data_type.itemsize)
+            dtype = np.dtype('<u2')
+            shape = (plane.height, plane.width)
+            strides = (plane.line_size, dtype.itemsize)
+
         else:
             raise ValueError("Cannot conveniently get numpy array from %s format" % frame.format.name)
 
-        return as_strided(np.frombuffer(plane, dtype=data_type) ,
-                          strides=arrstrides , shape=arrshape)
+        return as_strided(np.frombuffer(plane, dtype=dtype),
+            strides=strides,
+            shape=shape,
+        )
+
+    def to_nd_array(self, **kwargs):
+        return self.to_ndarray(**kwargs)
 
     def to_qimage(self, **kwargs):
         """Get an RGB ``QImage`` of this frame.
