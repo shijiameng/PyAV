@@ -20,6 +20,10 @@ cdef class VideoPlane(Plane):
     cdef size_t _buffer_size(self):
         return self.buffer_size
 
+    property line_size:
+        def __get__(self):
+            return self.frame.ptr.linesize[self.index]
+
     property width:
         """Pixel width of this plane."""
         def __get__(self):

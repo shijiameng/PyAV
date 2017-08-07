@@ -257,7 +257,13 @@ cdef class VideoFrame(Frame):
         # TODO: Figure out how we want to provide this via the Buffer interface,
         #       and just do that.
 
-        if frame.format.name in ('rgb24', 'bgr24'):
+        if frame.format.name in ('rgba', ):
+            dtype = np.dtype(np.uint8)
+            channels = 4
+            shape = (plane.height, plane.width, channels)
+            strides = (plane.line_size, channels * dtype.itemsize, dtype.itemsize)
+
+        elif frame.format.name in ('rgb24', 'bgr24'):
             dtype = np.dtype(np.uint8)
             channels = 3
             shape = (plane.height, plane.width, channels)
