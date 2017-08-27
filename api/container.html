@@ -1,0 +1,402 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Containers &#8212; PyAV 0.4.0.dev0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.4.0.dev0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="PyAV 0.4.0.dev0 documentation" href="../index.html" />
+    <link rel="up" title="Reference" href="index.html" />
+    <link rel="next" title="Streams" href="stream.html" />
+    <link rel="prev" title="Globals" href="toplevel.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="stream.html" title="Streams"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="toplevel.html" title="Globals"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PyAV 0.4.0.dev0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Reference</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-av.container">
+<span id="containers"></span><h1>Containers<a class="headerlink" href="#module-av.container" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="av.container.Container">
+<em class="property">class </em><code class="descclassname">av.container.</code><code class="descname">Container</code><a class="headerlink" href="#av.container.Container" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="attribute">
+<dt id="av.container.Container.file">
+<code class="descname">file</code><a class="headerlink" href="#av.container.Container.file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.container.Container.format">
+<code class="descname">format</code><a class="headerlink" href="#av.container.Container.format" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.container.Container.metadata">
+<code class="descname">metadata</code><a class="headerlink" href="#av.container.Container.metadata" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.container.Container.metadata_encoding">
+<code class="descname">metadata_encoding</code><a class="headerlink" href="#av.container.Container.metadata_encoding" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.container.Container.metadata_errors">
+<code class="descname">metadata_errors</code><a class="headerlink" href="#av.container.Container.metadata_errors" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.container.Container.name">
+<code class="descname">name</code><a class="headerlink" href="#av.container.Container.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.container.Container.streams">
+<code class="descname">streams</code><a class="headerlink" href="#av.container.Container.streams" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.container.Container.writeable">
+<code class="descname">writeable</code><a class="headerlink" href="#av.container.Container.writeable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<div class="section" id="input-containers">
+<h2>Input Containers<a class="headerlink" href="#input-containers" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="av.container.InputContainer">
+<em class="property">class </em><code class="descclassname">av.container.</code><code class="descname">InputContainer</code><a class="headerlink" href="#av.container.InputContainer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">av.container.core.Container</span></code></p>
+<dl class="attribute">
+<dt id="av.container.InputContainer.bit_rate">
+<code class="descname">bit_rate</code><a class="headerlink" href="#av.container.InputContainer.bit_rate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="av.container.InputContainer.decode">
+<code class="descname">decode</code><span class="sig-paren">(</span><em>streams=None</em>, <em>video=None</em>, <em>audio=None</em>, <em>subtitles=None</em>, <em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#av.container.InputContainer.decode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Yields a series of <a class="reference internal" href="frame.html#av.frame.Frame" title="av.frame.Frame"><code class="xref py py-class docutils literal"><span class="pre">Frame</span></code></a> from the given set of streams:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">frame</span> <span class="ow">in</span> <span class="n">container</span><span class="o">.</span><span class="n">decode</span><span class="p">():</span>
+    <span class="c1"># Do something with `frame`.</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="stream.html#av.container.streams.StreamContainer.get" title="av.container.streams.StreamContainer.get"><code class="xref py py-meth docutils literal"><span class="pre">StreamContainer.get()</span></code></a> for the interpretation of
+the arguments.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="av.container.InputContainer.demux">
+<code class="descname">demux</code><span class="sig-paren">(</span><em>streams=None</em>, <em>video=None</em>, <em>audio=None</em>, <em>subtitles=None</em>, <em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#av.container.InputContainer.demux" title="Permalink to this definition">¶</a></dt>
+<dd><p>Yields a series of <a class="reference internal" href="packet.html#av.packet.Packet" title="av.packet.Packet"><code class="xref py py-class docutils literal"><span class="pre">Packet</span></code></a> from the given set of <a class="reference internal" href="stream.html#av.stream.Stream" title="av.stream.Stream"><code class="xref py py-class docutils literal"><span class="pre">Stream</span></code></a>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">container</span><span class="o">.</span><span class="n">demux</span><span class="p">():</span>
+    <span class="c1"># Do something with `packet`, often:</span>
+    <span class="k">for</span> <span class="n">frame</span> <span class="ow">in</span> <span class="n">packet</span><span class="o">.</span><span class="n">decode</span><span class="p">():</span>
+        <span class="c1"># Do something with `frame`.</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="stream.html#av.container.streams.StreamContainer.get" title="av.container.streams.StreamContainer.get"><code class="xref py py-meth docutils literal"><span class="pre">StreamContainer.get()</span></code></a> for the interpretation of
+the arguments.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The last packets are dummy packets that when decoded will flush the buffers.</p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="av.container.InputContainer.duration">
+<code class="descname">duration</code><a class="headerlink" href="#av.container.InputContainer.duration" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="av.container.InputContainer.seek">
+<code class="descname">seek</code><span class="sig-paren">(</span><em>offset</em>, <em>whence='time'</em>, <em>backward=True</em>, <em>any_frame=False</em><span class="sig-paren">)</span><a class="headerlink" href="#av.container.InputContainer.seek" title="Permalink to this definition">¶</a></dt>
+<dd><p>Seek to a (key)frame nearsest to the given timestamp.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>offset</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; Location to seek to. Interpretation depends on <code class="docutils literal"><span class="pre">whence</span></code>.</li>
+<li><strong>whence</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; One of <code class="docutils literal"><span class="pre">'time'</span></code>, <code class="docutils literal"><span class="pre">'frame'</span></code>, or <code class="docutils literal"><span class="pre">'byte'</span></code></li>
+<li><strong>backward</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; If there is not a (key)frame at the given offset,
+look backwards for it.</li>
+<li><strong>any_frame</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; Seek to any frame, not just a keyframe.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><code class="docutils literal"><span class="pre">whence</span></code> has the following meanings:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">'time'</span></code>: <code class="docutils literal"><span class="pre">offset</span></code> is in <code class="docutils literal"><span class="pre">av.TIME_BASE</span></code>.</li>
+<li><code class="docutils literal"><span class="pre">'frame'</span></code>: <code class="docutils literal"><span class="pre">offset</span></code> is a frame index</li>
+<li><code class="docutils literal"><span class="pre">'byte'</span></code>: <code class="docutils literal"><span class="pre">offset</span></code> is the byte location in the file to seek to.</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Not all formats support all options.</p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="av.container.InputContainer.size">
+<code class="descname">size</code><a class="headerlink" href="#av.container.InputContainer.size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.container.InputContainer.start_time">
+<code class="descname">start_time</code><a class="headerlink" href="#av.container.InputContainer.start_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="output-containers">
+<h2>Output Containers<a class="headerlink" href="#output-containers" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="av.container.OutputContainer">
+<em class="property">class </em><code class="descclassname">av.container.</code><code class="descname">OutputContainer</code><a class="headerlink" href="#av.container.OutputContainer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">av.container.core.Container</span></code></p>
+<dl class="method">
+<dt id="av.container.OutputContainer.add_stream">
+<code class="descname">add_stream</code><span class="sig-paren">(</span><em>codec_name</em>, <em>rate=None</em><span class="sig-paren">)</span><a class="headerlink" href="#av.container.OutputContainer.add_stream" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new stream, and return it.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>codec_name</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; The name of a codec.</li>
+<li><strong>rate</strong> &#8211; The frame rate for video, and sample rate for audio.
+Examples for video include <code class="docutils literal"><span class="pre">24</span></code>, <code class="docutils literal"><span class="pre">23.976</span></code>, and
+<code class="docutils literal"><span class="pre">Fraction(30000,1001)</span></code>. Examples for audio include <code class="docutils literal"><span class="pre">48000</span></code>
+and <code class="docutils literal"><span class="pre">44100</span></code>.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The new <a class="reference internal" href="stream.html#av.stream.Stream" title="av.stream.Stream"><code class="xref py py-class docutils literal"><span class="pre">Stream</span></code></a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="av.container.OutputContainer.close">
+<code class="descname">close</code><span class="sig-paren">(</span><em>strict=False</em><span class="sig-paren">)</span><a class="headerlink" href="#av.container.OutputContainer.close" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="av.container.OutputContainer.mux">
+<code class="descname">mux</code><span class="sig-paren">(</span><em>packets</em><span class="sig-paren">)</span><a class="headerlink" href="#av.container.OutputContainer.mux" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="av.container.OutputContainer.mux_one">
+<code class="descname">mux_one</code><span class="sig-paren">(</span><em>Packet packet</em><span class="sig-paren">)</span><a class="headerlink" href="#av.container.OutputContainer.mux_one" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="av.container.OutputContainer.start_encoding">
+<code class="descname">start_encoding</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#av.container.OutputContainer.start_encoding" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the file header! Called automatically.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-av.format">
+<span id="formats"></span><h2>Formats<a class="headerlink" href="#module-av.format" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="av.format.ContainerFormat">
+<em class="property">class </em><code class="descclassname">av.format.</code><code class="descname">ContainerFormat</code><a class="headerlink" href="#av.format.ContainerFormat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>Descriptor of a container format.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; The name of the format.</li>
+<li><strong>mode</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; <code class="docutils literal"><span class="pre">'r'</span></code> or <code class="docutils literal"><span class="pre">'w'</span></code> for input and output formats; defaults
+to None which will grab either.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="av.format.ContainerFormat.descriptor">
+<code class="descname">descriptor</code><a class="headerlink" href="#av.format.ContainerFormat.descriptor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.format.ContainerFormat.extensions">
+<code class="descname">extensions</code><a class="headerlink" href="#av.format.ContainerFormat.extensions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.format.ContainerFormat.input">
+<code class="descname">input</code><a class="headerlink" href="#av.format.ContainerFormat.input" title="Permalink to this definition">¶</a></dt>
+<dd><p>An input-only view of this format.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="av.format.ContainerFormat.is_input">
+<code class="descname">is_input</code><a class="headerlink" href="#av.format.ContainerFormat.is_input" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.format.ContainerFormat.is_output">
+<code class="descname">is_output</code><a class="headerlink" href="#av.format.ContainerFormat.is_output" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.format.ContainerFormat.long_name">
+<code class="descname">long_name</code><a class="headerlink" href="#av.format.ContainerFormat.long_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.format.ContainerFormat.name">
+<code class="descname">name</code><a class="headerlink" href="#av.format.ContainerFormat.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.format.ContainerFormat.options">
+<code class="descname">options</code><a class="headerlink" href="#av.format.ContainerFormat.options" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.format.ContainerFormat.output">
+<code class="descname">output</code><a class="headerlink" href="#av.format.ContainerFormat.output" title="Permalink to this definition">¶</a></dt>
+<dd><p>An output-only view of this format.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo-250.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Containers</a><ul>
+<li><a class="reference internal" href="#input-containers">Input Containers</a></li>
+<li><a class="reference internal" href="#output-containers">Output Containers</a></li>
+<li><a class="reference internal" href="#module-av.format">Formats</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="toplevel.html"
+                        title="previous chapter">Globals</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="stream.html"
+                        title="next chapter">Streams</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/container.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="stream.html" title="Streams"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="toplevel.html" title="Globals"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PyAV 0.4.0.dev0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Reference</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Mike Boers.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

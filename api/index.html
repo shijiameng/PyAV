@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Reference &#8212; PyAV 0.4.0.dev0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.4.0.dev0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="PyAV 0.4.0.dev0 documentation" href="../index.html" />
+    <link rel="next" title="Globals" href="toplevel.html" />
+    <link rel="prev" title="Examples" href="../examples.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="toplevel.html" title="Globals"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../examples.html" title="Examples"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PyAV 0.4.0.dev0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="reference">
+<h1>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This is far from complete, and is mostly an automatic dump of the API.</p>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="toplevel.html">Globals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="container.html">Containers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="container.html#input-containers">Input Containers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="container.html#output-containers">Output Containers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="container.html#module-av.format">Formats</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="stream.html">Streams</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="stream.html#dynamic-slicing">Dynamic Slicing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stream.html#typed-collections">Typed Collections</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="packet.html">Packets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="codec.html">Codecs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frame.html">Frames</a></li>
+<li class="toctree-l1"><a class="reference internal" href="video.html">Video</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="video.html#module-av.video.stream">Video Streams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="video.html#module-av.video.codeccontext">Video Codecs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="video.html#module-av.video.format">Video Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="video.html#module-av.video.frame">Video Frames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="video.html#module-av.video.plane">Video Planes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">Audio</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="audio.html#module-av.audio.stream">Audio Streams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio.html#module-av.audio.codeccontext">Audio Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio.html#module-av.audio.format">Audio Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio.html#module-av.audio.layout">Audio Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio.html#module-av.audio.frame">Audio Frames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio.html#module-av.audio.fifo">Audio FIFOs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio.html#module-av.audio.resampler">Audio Resamplers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="subtitles.html">Subtitles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">Utilities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#module-av.logging">Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#module-av.utils">Other</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo-250.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../examples.html"
+                        title="previous chapter">Examples</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="toplevel.html"
+                        title="next chapter">Globals</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/index.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="toplevel.html" title="Globals"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../examples.html" title="Examples"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PyAV 0.4.0.dev0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Mike Boers.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

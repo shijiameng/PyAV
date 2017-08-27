@@ -72,13 +72,21 @@ of streams/containers.</li>
 <li><code class="docutils literal"><span class="pre">Stream.encode</span></code> returns a list of packets, instead of a single packet.</li>
 <li><code class="docutils literal"><span class="pre">AudioFifo</span></code> and <code class="docutils literal"><span class="pre">AudioResampler</span></code> will raise <code class="docutils literal"><span class="pre">ValueError</span></code> if input frames
 inconsistant <code class="docutils literal"><span class="pre">pts</span></code>.</li>
-<li><code class="docutils literal"><span class="pre">time_base</span></code> use has been revisited across the codebase; timing code may
-need to be reconsidered.</li>
+<li><code class="docutils literal"><span class="pre">time_base</span></code> use has been revisited across the codebase, and may not be converted
+bettween <code class="docutils literal"><span class="pre">Stream.time_base</span></code> and <code class="docutils literal"><span class="pre">CodecContext.time_base</span></code> at the same times
+in the transociding pipeline.</li>
+<li><code class="docutils literal"><span class="pre">CodecContext.rate</span></code> has been removed, but proxied to <code class="docutils literal"><span class="pre">VideoCodecContext.framerate</span></code>
+and <code class="docutils literal"><span class="pre">AudioCodecContext.sample_rate</span></code>. The definition is effectively inverted from
+the old one (i.e. for 24fps it used to be <code class="docutils literal"><span class="pre">1/24</span></code> and is now <code class="docutils literal"><span class="pre">24/1</span></code>).</li>
+<li>Fractions (e.g. <code class="docutils literal"><span class="pre">time_base</span></code>, <code class="docutils literal"><span class="pre">rate</span></code>) will be <code class="docutils literal"><span class="pre">None</span></code> if they are invalid.</li>
+<li><code class="docutils literal"><span class="pre">InputContainer.seek</span></code> and <code class="docutils literal"><span class="pre">Stream.seek</span></code> will raise TypeError if given
+a float, when previously they converted it from seconds.</li>
 </ul>
 <p>Minor:</p>
 <ul class="simple">
 <li>Added <code class="docutils literal"><span class="pre">Packet.is_keyframe</span></code> and <code class="docutils literal"><span class="pre">Packet.is_corrupt</span></code>. (#226.)</li>
 <li>Many more <code class="docutils literal"><span class="pre">time_base</span></code>, <code class="docutils literal"><span class="pre">pts</span></code> and other attributes are writeable.</li>
+<li><code class="docutils literal"><span class="pre">Option</span></code> exposes much more of the API (but not get/set). (#243).</li>
 </ul>
 <p>Fixes:</p>
 <ul class="simple">

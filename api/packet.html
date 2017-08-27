@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Packets &#8212; PyAV 0.4.0.dev0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.4.0.dev0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="PyAV 0.4.0.dev0 documentation" href="../index.html" />
+    <link rel="up" title="Reference" href="index.html" />
+    <link rel="next" title="Codecs" href="codec.html" />
+    <link rel="prev" title="Streams" href="stream.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="codec.html" title="Codecs"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="stream.html" title="Streams"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PyAV 0.4.0.dev0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Reference</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-av.packet">
+<span id="packets"></span><h1>Packets<a class="headerlink" href="#module-av.packet" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="av.packet.Packet">
+<em class="property">class </em><code class="descclassname">av.packet.</code><code class="descname">Packet</code><span class="sig-paren">(</span><em>input=None</em><span class="sig-paren">)</span><a class="headerlink" href="#av.packet.Packet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">av.buffer.Buffer</span></code></p>
+<p>A packet of encoded data within a <code class="xref py py-class docutils literal"><span class="pre">Stream</span></code>.</p>
+<p>This may, or may not include a complete object within a stream.
+<a class="reference internal" href="#av.packet.Packet.decode" title="av.packet.Packet.decode"><code class="xref py py-meth docutils literal"><span class="pre">decode()</span></code></a> must be called to extract encoded data.</p>
+<dl class="method">
+<dt id="av.packet.Packet.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#av.packet.Packet.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="av.packet.Packet.decode">
+<code class="descname">decode</code><span class="sig-paren">(</span><em>count=0</em><span class="sig-paren">)</span><a class="headerlink" href="#av.packet.Packet.decode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decode the data in this packet into a list of Frames.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="av.packet.Packet.decode_one">
+<code class="descname">decode_one</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#av.packet.Packet.decode_one" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decode the first frame from this packet.</p>
+<p>Returns <code class="docutils literal"><span class="pre">None</span></code> if there is no frame.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="av.packet.Packet.dts">
+<code class="descname">dts</code><a class="headerlink" href="#av.packet.Packet.dts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.packet.Packet.duration">
+<code class="descname">duration</code><a class="headerlink" href="#av.packet.Packet.duration" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.packet.Packet.is_corrupt">
+<code class="descname">is_corrupt</code><a class="headerlink" href="#av.packet.Packet.is_corrupt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.packet.Packet.is_keyframe">
+<code class="descname">is_keyframe</code><a class="headerlink" href="#av.packet.Packet.is_keyframe" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.packet.Packet.pos">
+<code class="descname">pos</code><a class="headerlink" href="#av.packet.Packet.pos" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.packet.Packet.pts">
+<code class="descname">pts</code><a class="headerlink" href="#av.packet.Packet.pts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.packet.Packet.size">
+<code class="descname">size</code><a class="headerlink" href="#av.packet.Packet.size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.packet.Packet.stream">
+<code class="descname">stream</code><a class="headerlink" href="#av.packet.Packet.stream" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.packet.Packet.stream_index">
+<code class="descname">stream_index</code><a class="headerlink" href="#av.packet.Packet.stream_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.packet.Packet.time_base">
+<code class="descname">time_base</code><a class="headerlink" href="#av.packet.Packet.time_base" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo-250.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="stream.html"
+                        title="previous chapter">Streams</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="codec.html"
+                        title="next chapter">Codecs</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/packet.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="codec.html" title="Codecs"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="stream.html" title="Streams"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PyAV 0.4.0.dev0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Reference</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Mike Boers.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

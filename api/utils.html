@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Utilities &#8212; PyAV 0.4.0.dev0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.4.0.dev0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="PyAV 0.4.0.dev0 documentation" href="../index.html" />
+    <link rel="up" title="Reference" href="index.html" />
+    <link rel="next" title="Hacking on PyAV" href="../hacking.html" />
+    <link rel="prev" title="Subtitles" href="subtitles.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../hacking.html" title="Hacking on PyAV"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="subtitles.html" title="Subtitles"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PyAV 0.4.0.dev0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Reference</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="utilities">
+<h1>Utilities<a class="headerlink" href="#utilities" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-av.logging">
+<span id="logging"></span><h2>Logging<a class="headerlink" href="#module-av.logging" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="av.logging.get_level">
+<code class="descclassname">av.logging.</code><code class="descname">get_level</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#av.logging.get_level" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return current logging threshold. See <a class="reference internal" href="#av.logging.set_level" title="av.logging.set_level"><code class="xref py py-func docutils literal"><span class="pre">set_level()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="av.logging.get_print_after_shutdown">
+<code class="descclassname">av.logging.</code><code class="descname">get_print_after_shutdown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#av.logging.get_print_after_shutdown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Will logging continue to <code class="docutils literal"><span class="pre">stderr</span></code> after Python shutdown?</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="av.logging.get_skip_repeated">
+<code class="descclassname">av.logging.</code><code class="descname">get_skip_repeated</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#av.logging.get_skip_repeated" title="Permalink to this definition">¶</a></dt>
+<dd><p>Will identical logs be emitted?</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="av.logging.set_level">
+<code class="descclassname">av.logging.</code><code class="descname">set_level</code><span class="sig-paren">(</span><em>level</em><span class="sig-paren">)</span><a class="headerlink" href="#av.logging.set_level" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets logging threshold when converting from the library&#8217;s logging system
+to Python&#8217;s. It is recommended to use the constants availible in this
+module to set the level: <code class="docutils literal"><span class="pre">QUIET</span></code>, <code class="docutils literal"><span class="pre">PANIC</span></code>, <code class="docutils literal"><span class="pre">FATAL</span></code>, <code class="docutils literal"><span class="pre">ERROR</span></code>,
+<code class="docutils literal"><span class="pre">WARNING</span></code>, <code class="docutils literal"><span class="pre">INFO</span></code>, <code class="docutils literal"><span class="pre">VERBOSE</span></code>, and <code class="docutils literal"><span class="pre">DEBUG</span></code>.</p>
+<p>While less efficient, it is generally preferable to modify logging
+with Python&#8217;s <a class="reference external" href="https://docs.python.org/2/library/logging.html#module-logging" title="(in Python v2.7)"><code class="xref py py-mod docutils literal"><span class="pre">logging</span></code></a>, e.g.:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;libav&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">ERROR</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>PyAV defaults to translating everything except <code class="docutils literal"><span class="pre">AV_LOG_DEBUG</span></code>, so this
+function is only nessesary to use if you want to see those messages as well.
+<code class="docutils literal"><span class="pre">AV_LOG_DEBUG</span></code> will be translated to a level 5 message, which is lower
+than any builting Python logging level, so you must lower that as well:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="av.logging.set_print_after_shutdown">
+<code class="descclassname">av.logging.</code><code class="descname">set_print_after_shutdown</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#av.logging.set_print_after_shutdown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set if logging should continue to <code class="docutils literal"><span class="pre">stderr</span></code> after Python shutdown.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="av.logging.set_skip_repeated">
+<code class="descclassname">av.logging.</code><code class="descname">set_skip_repeated</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#av.logging.set_skip_repeated" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set if identical logs will be emitted</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-av.utils">
+<span id="other"></span><h2>Other<a class="headerlink" href="#module-av.utils" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="av.utils.AVError">
+<em class="property">class </em><code class="descclassname">av.utils.</code><code class="descname">AVError</code><a class="headerlink" href="#av.utils.AVError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/exceptions.html#exceptions.EnvironmentError" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">exceptions.EnvironmentError</span></code></a></p>
+<p>Exception class for errors from within the underlying FFmpeg/Libav.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo-250.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Utilities</a><ul>
+<li><a class="reference internal" href="#module-av.logging">Logging</a></li>
+<li><a class="reference internal" href="#module-av.utils">Other</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="subtitles.html"
+                        title="previous chapter">Subtitles</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../hacking.html"
+                        title="next chapter">Hacking on PyAV</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/utils.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../hacking.html" title="Hacking on PyAV"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="subtitles.html" title="Subtitles"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PyAV 0.4.0.dev0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Reference</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Mike Boers.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

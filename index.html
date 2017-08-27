@@ -61,9 +61,9 @@
 <li><dl class="first docutils">
 <dt>libavformat:</dt>
 <dd><ul class="first last simple">
-<li><a class="reference internal" href="api.html#av.container.Container" title="av.container.Container"><code class="xref py py-class docutils literal"><span class="pre">containers</span></code></a></li>
-<li>audio/video/subtitle <a class="reference internal" href="api.html#av.stream.Stream" title="av.stream.Stream"><code class="xref py py-class docutils literal"><span class="pre">streams</span></code></a></li>
-<li><a class="reference internal" href="api.html#av.packet.Packet" title="av.packet.Packet"><code class="xref py py-class docutils literal"><span class="pre">packets</span></code></a></li>
+<li><a class="reference internal" href="api/container.html#av.container.Container" title="av.container.Container"><code class="xref py py-class docutils literal"><span class="pre">containers</span></code></a></li>
+<li>audio/video/subtitle <a class="reference internal" href="api/stream.html#av.stream.Stream" title="av.stream.Stream"><code class="xref py py-class docutils literal"><span class="pre">streams</span></code></a></li>
+<li><a class="reference internal" href="api/packet.html#av.packet.Packet" title="av.packet.Packet"><code class="xref py py-class docutils literal"><span class="pre">packets</span></code></a></li>
 </ul>
 </dd>
 </dl>
@@ -73,11 +73,11 @@
 <li><dl class="first docutils">
 <dt>libavcodec:</dt>
 <dd><ul class="first last simple">
-<li><a class="reference internal" href="api.html#av.codec.codec.Codec" title="av.codec.codec.Codec"><code class="xref py py-class docutils literal"><span class="pre">Codec</span></code></a></li>
-<li><a class="reference internal" href="api.html#av.codec.context.CodecContext" title="av.codec.context.CodecContext"><code class="xref py py-class docutils literal"><span class="pre">CodecContext</span></code></a></li>
-<li>audio/video <a class="reference internal" href="api.html#av.frame.Frame" title="av.frame.Frame"><code class="xref py py-class docutils literal"><span class="pre">frames</span></code></a></li>
-<li><a class="reference internal" href="api.html#av.plane.Plane" title="av.plane.Plane"><code class="xref py py-class docutils literal"><span class="pre">data</span> <span class="pre">planes</span></code></a></li>
-<li><a class="reference internal" href="api.html#av.subtitles.subtitle.Subtitle" title="av.subtitles.subtitle.Subtitle"><code class="xref py py-class docutils literal"><span class="pre">subtitles</span></code></a></li>
+<li><a class="reference internal" href="api/codec.html#av.codec.codec.Codec" title="av.codec.codec.Codec"><code class="xref py py-class docutils literal"><span class="pre">Codec</span></code></a></li>
+<li><a class="reference internal" href="api/codec.html#av.codec.context.CodecContext" title="av.codec.context.CodecContext"><code class="xref py py-class docutils literal"><span class="pre">CodecContext</span></code></a></li>
+<li>audio/video <a class="reference internal" href="api/frame.html#av.frame.Frame" title="av.frame.Frame"><code class="xref py py-class docutils literal"><span class="pre">frames</span></code></a></li>
+<li><a class="reference internal" href="api/plane.html#av.plane.Plane" title="av.plane.Plane"><code class="xref py py-class docutils literal"><span class="pre">data</span> <span class="pre">planes</span></code></a></li>
+<li><a class="reference internal" href="api/subtitles.html#av.subtitles.subtitle.Subtitle" title="av.subtitles.subtitle.Subtitle"><code class="xref py py-class docutils literal"><span class="pre">subtitles</span></code></a></li>
 </ul>
 </dd>
 </dl>
@@ -88,7 +88,6 @@
 <div class="section" id="basic-demo">
 <h2>Basic Demo<a class="headerlink" href="#basic-demo" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">av</span>
-<span class="kn">import</span> <span class="nn">os</span>
 
 <span class="n">container</span> <span class="o">=</span> <span class="n">av</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path_to_video</span><span class="p">)</span>
 
@@ -112,12 +111,17 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="api.html#general">General</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api.html#video">Video</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api.html#audio">Audio</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api.html#module-av.subtitles.stream">Subtitles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api.html#utilities">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/index.html">Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/toplevel.html">Globals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/container.html">Containers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/stream.html">Streams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/packet.html">Packets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/codec.html">Codecs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/frame.html">Frames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/audio.html">Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/subtitles.html">Subtitles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/utils.html">Utilities</a></li>
 </ul>
 </li>
 </ul>
@@ -127,6 +131,7 @@
 <li class="toctree-l1"><a class="reference internal" href="hacking.html">Hacking on PyAV</a></li>
 <li class="toctree-l1"><a class="reference internal" href="includes.html">Wrapped C Types and Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributors.html">Contributors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 </ul>
 </div>

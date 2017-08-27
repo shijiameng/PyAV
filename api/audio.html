@@ -1,0 +1,548 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Audio &#8212; PyAV 0.4.0.dev0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.4.0.dev0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="PyAV 0.4.0.dev0 documentation" href="../index.html" />
+    <link rel="up" title="Reference" href="index.html" />
+    <link rel="next" title="Subtitles" href="subtitles.html" />
+    <link rel="prev" title="Video" href="video.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="subtitles.html" title="Subtitles"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="video.html" title="Video"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PyAV 0.4.0.dev0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Reference</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="audio">
+<h1>Audio<a class="headerlink" href="#audio" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-av.audio.stream">
+<span id="audio-streams"></span><h2>Audio Streams<a class="headerlink" href="#module-av.audio.stream" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="av.audio.stream.AudioStream">
+<em class="property">class </em><code class="descclassname">av.audio.stream.</code><code class="descname">AudioStream</code><a class="headerlink" href="#av.audio.stream.AudioStream" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="stream.html#av.stream.Stream" title="av.stream.Stream"><code class="xref py py-class docutils literal"><span class="pre">av.stream.Stream</span></code></a></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-av.audio.codeccontext">
+<span id="audio-context"></span><h2>Audio Context<a class="headerlink" href="#module-av.audio.codeccontext" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="av.audio.codeccontext.AudioCodecContext">
+<em class="property">class </em><code class="descclassname">av.audio.codeccontext.</code><code class="descname">AudioCodecContext</code><a class="headerlink" href="#av.audio.codeccontext.AudioCodecContext" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="codec.html#av.codec.context.CodecContext" title="av.codec.context.CodecContext"><code class="xref py py-class docutils literal"><span class="pre">av.codec.context.CodecContext</span></code></a></p>
+<dl class="attribute">
+<dt id="av.audio.codeccontext.AudioCodecContext.channel_layout">
+<code class="descname">channel_layout</code><a class="headerlink" href="#av.audio.codeccontext.AudioCodecContext.channel_layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.audio.codeccontext.AudioCodecContext.channels">
+<code class="descname">channels</code><a class="headerlink" href="#av.audio.codeccontext.AudioCodecContext.channels" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.audio.codeccontext.AudioCodecContext.format">
+<code class="descname">format</code><a class="headerlink" href="#av.audio.codeccontext.AudioCodecContext.format" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.audio.codeccontext.AudioCodecContext.frame_size">
+<code class="descname">frame_size</code><a class="headerlink" href="#av.audio.codeccontext.AudioCodecContext.frame_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of samples per channel in an audio frame.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="av.audio.codeccontext.AudioCodecContext.layout">
+<code class="descname">layout</code><a class="headerlink" href="#av.audio.codeccontext.AudioCodecContext.layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.audio.codeccontext.AudioCodecContext.rate">
+<code class="descname">rate</code><a class="headerlink" href="#av.audio.codeccontext.AudioCodecContext.rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Another name for <a class="reference internal" href="#av.audio.codeccontext.AudioCodecContext.sample_rate" title="av.audio.codeccontext.AudioCodecContext.sample_rate"><code class="xref py py-attr docutils literal"><span class="pre">sample_rate</span></code></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="av.audio.codeccontext.AudioCodecContext.sample_rate">
+<code class="descname">sample_rate</code><a class="headerlink" href="#av.audio.codeccontext.AudioCodecContext.sample_rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number samples of per second.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-av.audio.format">
+<span id="audio-formats"></span><h2>Audio Formats<a class="headerlink" href="#module-av.audio.format" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="av.audio.format.AudioFormat">
+<em class="property">class </em><code class="descclassname">av.audio.format.</code><code class="descname">AudioFormat</code><a class="headerlink" href="#av.audio.format.AudioFormat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>Descriptor of audio formats.</p>
+<dl class="attribute">
+<dt id="av.audio.format.AudioFormat.bits">
+<code class="descname">bits</code><a class="headerlink" href="#av.audio.format.AudioFormat.bits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of bits per sample.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">SampleFormat</span><span class="p">(</span><span class="s1">&#39;s16p&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">bits</span>
+<span class="go">16</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="av.audio.format.AudioFormat.bytes">
+<code class="descname">bytes</code><a class="headerlink" href="#av.audio.format.AudioFormat.bytes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of bytes per sample.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">SampleFormat</span><span class="p">(</span><span class="s1">&#39;s16p&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">bytes</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="av.audio.format.AudioFormat.container_name">
+<code class="descname">container_name</code><a class="headerlink" href="#av.audio.format.AudioFormat.container_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of a <code class="xref py py-class docutils literal"><span class="pre">ContainerFormat</span></code> which directly accepts this data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><strong>ValueError</strong> &#8211; when planar, since there are no such containers.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="av.audio.format.AudioFormat.is_packed">
+<code class="descname">is_packed</code><a class="headerlink" href="#av.audio.format.AudioFormat.is_packed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is this a planar format?</p>
+<p>Strictly opposite of <a class="reference internal" href="#av.audio.format.AudioFormat.is_planar" title="av.audio.format.AudioFormat.is_planar"><code class="xref py py-attr docutils literal"><span class="pre">is_planar</span></code></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="av.audio.format.AudioFormat.is_planar">
+<code class="descname">is_planar</code><a class="headerlink" href="#av.audio.format.AudioFormat.is_planar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is this a planar format?</p>
+<p>Strictly opposite of <a class="reference internal" href="#av.audio.format.AudioFormat.is_packed" title="av.audio.format.AudioFormat.is_packed"><code class="xref py py-attr docutils literal"><span class="pre">is_packed</span></code></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="av.audio.format.AudioFormat.name">
+<code class="descname">name</code><a class="headerlink" href="#av.audio.format.AudioFormat.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Canonical name of the sample format.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">SampleFormat</span><span class="p">(</span><span class="s1">&#39;s16p&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">name</span>
+<span class="go">&#39;s16p&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="av.audio.format.AudioFormat.packed">
+<code class="descname">packed</code><a class="headerlink" href="#av.audio.format.AudioFormat.packed" title="Permalink to this definition">¶</a></dt>
+<dd><p>The packed variant of this format.</p>
+<p>Is itself when packed:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fmt</span> <span class="o">=</span> <span class="n">Format</span><span class="p">(</span><span class="s1">&#39;s16&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fmt</span><span class="o">.</span><span class="n">packed</span> <span class="ow">is</span> <span class="n">fmt</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="av.audio.format.AudioFormat.planar">
+<code class="descname">planar</code><a class="headerlink" href="#av.audio.format.AudioFormat.planar" title="Permalink to this definition">¶</a></dt>
+<dd><p>The planar variant of this format.</p>
+<p>Is itself when planar:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fmt</span> <span class="o">=</span> <span class="n">Format</span><span class="p">(</span><span class="s1">&#39;s16p&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fmt</span><span class="o">.</span><span class="n">planar</span> <span class="ow">is</span> <span class="n">fmt</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-av.audio.layout">
+<span id="audio-layouts"></span><h2>Audio Layouts<a class="headerlink" href="#module-av.audio.layout" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="av.audio.layout.AudioLayout">
+<em class="property">class </em><code class="descclassname">av.audio.layout.</code><code class="descname">AudioLayout</code><span class="sig-paren">(</span><em>layout</em><span class="sig-paren">)</span><a class="headerlink" href="#av.audio.layout.AudioLayout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="attribute">
+<dt id="av.audio.layout.AudioLayout.channels">
+<code class="descname">channels</code><a class="headerlink" href="#av.audio.layout.AudioLayout.channels" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.audio.layout.AudioLayout.name">
+<code class="descname">name</code><a class="headerlink" href="#av.audio.layout.AudioLayout.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The canonical name of the audio layout.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-av.audio.frame">
+<span id="audio-frames"></span><h2>Audio Frames<a class="headerlink" href="#module-av.audio.frame" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="av.audio.frame.AudioFrame">
+<em class="property">class </em><code class="descclassname">av.audio.frame.</code><code class="descname">AudioFrame</code><a class="headerlink" href="#av.audio.frame.AudioFrame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="frame.html#av.frame.Frame" title="av.frame.Frame"><code class="xref py py-class docutils literal"><span class="pre">av.frame.Frame</span></code></a></p>
+<p>A frame of audio.</p>
+<dl class="attribute">
+<dt id="av.audio.frame.AudioFrame.format">
+<code class="descname">format</code><a class="headerlink" href="#av.audio.frame.AudioFrame.format" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.audio.frame.AudioFrame.layout">
+<code class="descname">layout</code><a class="headerlink" href="#av.audio.frame.AudioFrame.layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.audio.frame.AudioFrame.rate">
+<code class="descname">rate</code><a class="headerlink" href="#av.audio.frame.AudioFrame.rate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.audio.frame.AudioFrame.sample_rate">
+<code class="descname">sample_rate</code><a class="headerlink" href="#av.audio.frame.AudioFrame.sample_rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sample rate of the audio data.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="av.audio.frame.AudioFrame.samples">
+<code class="descname">samples</code><a class="headerlink" href="#av.audio.frame.AudioFrame.samples" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of audio samples (per channel)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="av.audio.frame.AudioFrame.to_nd_array">
+<code class="descname">to_nd_array</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#av.audio.frame.AudioFrame.to_nd_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a numpy array of this frame.
+Any <code class="docutils literal"><span class="pre">**kwargs</span></code> are passed to <code class="xref py py-meth docutils literal"><span class="pre">AudioFrame.reformat()</span></code>.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-av.audio.fifo">
+<span id="audio-fifos"></span><h2>Audio FIFOs<a class="headerlink" href="#module-av.audio.fifo" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="av.audio.fifo.AudioFifo">
+<em class="property">class </em><code class="descclassname">av.audio.fifo.</code><code class="descname">AudioFifo</code><a class="headerlink" href="#av.audio.fifo.AudioFifo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>A simple audio sample FIFO (First In First Out) buffer.</p>
+<dl class="method">
+<dt id="av.audio.fifo.AudioFifo.write">
+<code class="descname">write</code><span class="sig-paren">(</span><em>frame</em><span class="sig-paren">)</span><a class="headerlink" href="#av.audio.fifo.AudioFifo.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Push a frame of samples into the queue.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>frame</strong> (<a class="reference internal" href="#av.audio.frame.AudioFrame" title="av.audio.frame.AudioFrame"><em>AudioFrame</em></a>) &#8211; The frame of samples to push.</td>
+</tr>
+</tbody>
+</table>
+<p>The FIFO will remember the attributes from the first frame, and use those
+to populate all output frames.</p>
+<p>If there is a <a class="reference internal" href="frame.html#av.frame.Frame.pts" title="av.frame.Frame.pts"><code class="xref py py-attr docutils literal"><span class="pre">pts</span></code></a> and <a class="reference internal" href="frame.html#av.frame.Frame.time_base" title="av.frame.Frame.time_base"><code class="xref py py-attr docutils literal"><span class="pre">time_base</span></code></a> and
+<a class="reference internal" href="#av.audio.frame.AudioFrame.sample_rate" title="av.audio.frame.AudioFrame.sample_rate"><code class="xref py py-attr docutils literal"><span class="pre">sample_rate</span></code></a>, then the FIFO will assert that the incoming
+timestamps are continuous.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="av.audio.fifo.AudioFifo.read">
+<code class="descname">read</code><span class="sig-paren">(</span><em>samples=0</em>, <em>partial=False</em><span class="sig-paren">)</span><a class="headerlink" href="#av.audio.fifo.AudioFifo.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read samples from the queue.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>samples</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; The number of samples to pull; 0 gets all.</li>
+<li><strong>partial</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; Allow returning less than requested.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">New <code class="xref py py-class docutils literal"><span class="pre">AudioFrame</span></code> or <code class="docutils literal"><span class="pre">None</span></code> (if empty).</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>If the incoming frames had valid a <a class="reference internal" href="frame.html#av.frame.Frame.time_base" title="av.frame.Frame.time_base"><code class="xref py py-attr docutils literal"><span class="pre">time_base</span></code></a>,
+<a class="reference internal" href="#av.audio.frame.AudioFrame.sample_rate" title="av.audio.frame.AudioFrame.sample_rate"><code class="xref py py-attr docutils literal"><span class="pre">sample_rate</span></code></a> and <a class="reference internal" href="frame.html#av.frame.Frame.pts" title="av.frame.Frame.pts"><code class="xref py py-attr docutils literal"><span class="pre">pts</span></code></a>, the returned frames
+will have accurate timing.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="av.audio.fifo.AudioFifo.read_many">
+<code class="descname">read_many</code><span class="sig-paren">(</span><em>samples</em>, <em>partial=False</em><span class="sig-paren">)</span><a class="headerlink" href="#av.audio.fifo.AudioFifo.read_many" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read as many frames as we can.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>samples</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; How large for the frames to be.</li>
+<li><strong>partial</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; If we should return a partial frame.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A <code class="docutils literal"><span class="pre">list</span></code> of <code class="xref py py-class docutils literal"><span class="pre">AudioFrame</span></code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="av.audio.fifo.AudioFifo.format">
+<code class="descname">format</code><a class="headerlink" href="#av.audio.fifo.AudioFifo.format" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="#av.audio.format.AudioFormat" title="av.audio.format.AudioFormat"><code class="xref py py-class docutils literal"><span class="pre">AudioFormat</span></code></a> of this FIFO.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="av.audio.fifo.AudioFifo.layout">
+<code class="descname">layout</code><a class="headerlink" href="#av.audio.fifo.AudioFifo.layout" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="#av.audio.layout.AudioLayout" title="av.audio.layout.AudioLayout"><code class="xref py py-class docutils literal"><span class="pre">AudioLayout</span></code></a> of this FIFO.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="av.audio.fifo.AudioFifo.pts_per_sample">
+<code class="descname">pts_per_sample</code><a class="headerlink" href="#av.audio.fifo.AudioFifo.pts_per_sample" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.audio.fifo.AudioFifo.sample_rate">
+<code class="descname">sample_rate</code><a class="headerlink" href="#av.audio.fifo.AudioFifo.sample_rate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.audio.fifo.AudioFifo.samples">
+<code class="descname">samples</code><a class="headerlink" href="#av.audio.fifo.AudioFifo.samples" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of audio samples (per channel) in the buffer.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="av.audio.fifo.AudioFifo.samples_read">
+<code class="descname">samples_read</code><a class="headerlink" href="#av.audio.fifo.AudioFifo.samples_read" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.audio.fifo.AudioFifo.samples_written">
+<code class="descname">samples_written</code><a class="headerlink" href="#av.audio.fifo.AudioFifo.samples_written" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-av.audio.resampler">
+<span id="audio-resamplers"></span><h2>Audio Resamplers<a class="headerlink" href="#module-av.audio.resampler" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="av.audio.resampler.AudioResampler">
+<em class="property">class </em><code class="descclassname">av.audio.resampler.</code><code class="descname">AudioResampler</code><span class="sig-paren">(</span><em>format=None</em>, <em>layout=None</em>, <em>rate=None</em><span class="sig-paren">)</span><a class="headerlink" href="#av.audio.resampler.AudioResampler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>format</strong> (<a class="reference internal" href="#av.audio.format.AudioFormat" title="av.audio.format.AudioFormat"><em>AudioFormat</em></a>) &#8211; The target format, or string that parses to one
+(e.g. <code class="docutils literal"><span class="pre">&quot;s16&quot;</span></code>).</li>
+<li><strong>layout</strong> (<a class="reference internal" href="#av.audio.layout.AudioLayout" title="av.audio.layout.AudioLayout"><em>AudioLayout</em></a>) &#8211; The target layout, or an int/string that parses
+to one (e.g. <code class="docutils literal"><span class="pre">&quot;stereo&quot;</span></code>).</li>
+<li><strong>rate</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; The target sample rate.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="av.audio.resampler.AudioResampler.resample">
+<code class="descname">resample</code><span class="sig-paren">(</span><em>frame</em><span class="sig-paren">)</span><a class="headerlink" href="#av.audio.resampler.AudioResampler.resample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the <code class="docutils literal"><span class="pre">sample_rate</span></code>, <code class="docutils literal"><span class="pre">channel_layout</span></code> and/or <code class="docutils literal"><span class="pre">format</span></code> of
+a <a class="reference internal" href="#av.audio.frame.AudioFrame" title="av.audio.frame.AudioFrame"><code class="xref py py-class docutils literal"><span class="pre">AudioFrame</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>frame</strong> (<a class="reference internal" href="#av.audio.frame.AudioFrame" title="av.audio.frame.AudioFrame"><em>AudioFrame</em></a>) &#8211; The frame to convert.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A new <code class="xref py py-class docutils literal"><span class="pre">AudioFrame</span></code> in new parameters, or the same frame
+if there is nothing to be done.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><code class="docutils literal"><span class="pre">ValueError</span></code> if <code class="docutils literal"><span class="pre">Frame.pts</span></code> is set and non-simple.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="av.audio.resampler.AudioResampler.format">
+<code class="descname">format</code><a class="headerlink" href="#av.audio.resampler.AudioResampler.format" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.audio.resampler.AudioResampler.is_passthrough">
+<code class="descname">is_passthrough</code><a class="headerlink" href="#av.audio.resampler.AudioResampler.is_passthrough" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.audio.resampler.AudioResampler.layout">
+<code class="descname">layout</code><a class="headerlink" href="#av.audio.resampler.AudioResampler.layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.audio.resampler.AudioResampler.pts_per_sample_in">
+<code class="descname">pts_per_sample_in</code><a class="headerlink" href="#av.audio.resampler.AudioResampler.pts_per_sample_in" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.audio.resampler.AudioResampler.rate">
+<code class="descname">rate</code><a class="headerlink" href="#av.audio.resampler.AudioResampler.rate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.audio.resampler.AudioResampler.samples_in">
+<code class="descname">samples_in</code><a class="headerlink" href="#av.audio.resampler.AudioResampler.samples_in" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.audio.resampler.AudioResampler.samples_out">
+<code class="descname">samples_out</code><a class="headerlink" href="#av.audio.resampler.AudioResampler.samples_out" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.audio.resampler.AudioResampler.simple_pts_out">
+<code class="descname">simple_pts_out</code><a class="headerlink" href="#av.audio.resampler.AudioResampler.simple_pts_out" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo-250.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Audio</a><ul>
+<li><a class="reference internal" href="#module-av.audio.stream">Audio Streams</a></li>
+<li><a class="reference internal" href="#module-av.audio.codeccontext">Audio Context</a></li>
+<li><a class="reference internal" href="#module-av.audio.format">Audio Formats</a></li>
+<li><a class="reference internal" href="#module-av.audio.layout">Audio Layouts</a></li>
+<li><a class="reference internal" href="#module-av.audio.frame">Audio Frames</a></li>
+<li><a class="reference internal" href="#module-av.audio.fifo">Audio FIFOs</a></li>
+<li><a class="reference internal" href="#module-av.audio.resampler">Audio Resamplers</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="video.html"
+                        title="previous chapter">Video</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="subtitles.html"
+                        title="next chapter">Subtitles</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/audio.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="subtitles.html" title="Subtitles"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="video.html" title="Video"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PyAV 0.4.0.dev0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Reference</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Mike Boers.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Subtitles &#8212; PyAV 0.4.0.dev0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.4.0.dev0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="PyAV 0.4.0.dev0 documentation" href="../index.html" />
+    <link rel="up" title="Reference" href="index.html" />
+    <link rel="next" title="Utilities" href="utils.html" />
+    <link rel="prev" title="Audio" href="audio.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="utils.html" title="Utilities"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="audio.html" title="Audio"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PyAV 0.4.0.dev0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Reference</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-av.subtitles.stream">
+<span id="subtitles"></span><h1>Subtitles<a class="headerlink" href="#module-av.subtitles.stream" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="av.subtitles.stream.SubtitleStream">
+<em class="property">class </em><code class="descclassname">av.subtitles.stream.</code><code class="descname">SubtitleStream</code><a class="headerlink" href="#av.subtitles.stream.SubtitleStream" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="stream.html#av.stream.Stream" title="av.stream.Stream"><code class="xref py py-class docutils literal"><span class="pre">av.stream.Stream</span></code></a></p>
+</dd></dl>
+
+<span class="target" id="module-av.subtitles.subtitle"></span><dl class="class">
+<dt id="av.subtitles.subtitle.SubtitleSet">
+<em class="property">class </em><code class="descclassname">av.subtitles.subtitle.</code><code class="descname">SubtitleSet</code><a class="headerlink" href="#av.subtitles.subtitle.SubtitleSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="attribute">
+<dt id="av.subtitles.subtitle.SubtitleSet.end_display_time">
+<code class="descname">end_display_time</code><a class="headerlink" href="#av.subtitles.subtitle.SubtitleSet.end_display_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.subtitles.subtitle.SubtitleSet.format">
+<code class="descname">format</code><a class="headerlink" href="#av.subtitles.subtitle.SubtitleSet.format" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.subtitles.subtitle.SubtitleSet.packet">
+<code class="descname">packet</code><a class="headerlink" href="#av.subtitles.subtitle.SubtitleSet.packet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.subtitles.subtitle.SubtitleSet.pts">
+<code class="descname">pts</code><a class="headerlink" href="#av.subtitles.subtitle.SubtitleSet.pts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.subtitles.subtitle.SubtitleSet.rects">
+<code class="descname">rects</code><a class="headerlink" href="#av.subtitles.subtitle.SubtitleSet.rects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.subtitles.subtitle.SubtitleSet.start_display_time">
+<code class="descname">start_display_time</code><a class="headerlink" href="#av.subtitles.subtitle.SubtitleSet.start_display_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="av.subtitles.subtitle.Subtitle">
+<em class="property">class </em><code class="descclassname">av.subtitles.subtitle.</code><code class="descname">Subtitle</code><a class="headerlink" href="#av.subtitles.subtitle.Subtitle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="attribute">
+<dt id="av.subtitles.subtitle.Subtitle.type">
+<code class="descname">type</code><a class="headerlink" href="#av.subtitles.subtitle.Subtitle.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="av.subtitles.subtitle.BitmapSubtitle">
+<em class="property">class </em><code class="descclassname">av.subtitles.subtitle.</code><code class="descname">BitmapSubtitle</code><a class="headerlink" href="#av.subtitles.subtitle.BitmapSubtitle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#av.subtitles.subtitle.Subtitle" title="av.subtitles.subtitle.Subtitle"><code class="xref py py-class docutils literal"><span class="pre">av.subtitles.subtitle.Subtitle</span></code></a></p>
+<dl class="attribute">
+<dt id="av.subtitles.subtitle.BitmapSubtitle.height">
+<code class="descname">height</code><a class="headerlink" href="#av.subtitles.subtitle.BitmapSubtitle.height" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.subtitles.subtitle.BitmapSubtitle.nb_colors">
+<code class="descname">nb_colors</code><a class="headerlink" href="#av.subtitles.subtitle.BitmapSubtitle.nb_colors" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.subtitles.subtitle.BitmapSubtitle.planes">
+<code class="descname">planes</code><a class="headerlink" href="#av.subtitles.subtitle.BitmapSubtitle.planes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.subtitles.subtitle.BitmapSubtitle.width">
+<code class="descname">width</code><a class="headerlink" href="#av.subtitles.subtitle.BitmapSubtitle.width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.subtitles.subtitle.BitmapSubtitle.x">
+<code class="descname">x</code><a class="headerlink" href="#av.subtitles.subtitle.BitmapSubtitle.x" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.subtitles.subtitle.BitmapSubtitle.y">
+<code class="descname">y</code><a class="headerlink" href="#av.subtitles.subtitle.BitmapSubtitle.y" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="av.subtitles.subtitle.BitmapSubtitlePlane">
+<em class="property">class </em><code class="descclassname">av.subtitles.subtitle.</code><code class="descname">BitmapSubtitlePlane</code><a class="headerlink" href="#av.subtitles.subtitle.BitmapSubtitlePlane" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="attribute">
+<dt id="av.subtitles.subtitle.BitmapSubtitlePlane.buffer_size">
+<code class="descname">buffer_size</code><a class="headerlink" href="#av.subtitles.subtitle.BitmapSubtitlePlane.buffer_size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.subtitles.subtitle.BitmapSubtitlePlane.index">
+<code class="descname">index</code><a class="headerlink" href="#av.subtitles.subtitle.BitmapSubtitlePlane.index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.subtitles.subtitle.BitmapSubtitlePlane.subtitle">
+<code class="descname">subtitle</code><a class="headerlink" href="#av.subtitles.subtitle.BitmapSubtitlePlane.subtitle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="av.subtitles.subtitle.TextSubtitle">
+<em class="property">class </em><code class="descclassname">av.subtitles.subtitle.</code><code class="descname">TextSubtitle</code><a class="headerlink" href="#av.subtitles.subtitle.TextSubtitle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#av.subtitles.subtitle.Subtitle" title="av.subtitles.subtitle.Subtitle"><code class="xref py py-class docutils literal"><span class="pre">av.subtitles.subtitle.Subtitle</span></code></a></p>
+<dl class="attribute">
+<dt id="av.subtitles.subtitle.TextSubtitle.text">
+<code class="descname">text</code><a class="headerlink" href="#av.subtitles.subtitle.TextSubtitle.text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="av.subtitles.subtitle.AssSubtitle">
+<em class="property">class </em><code class="descclassname">av.subtitles.subtitle.</code><code class="descname">AssSubtitle</code><a class="headerlink" href="#av.subtitles.subtitle.AssSubtitle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#av.subtitles.subtitle.Subtitle" title="av.subtitles.subtitle.Subtitle"><code class="xref py py-class docutils literal"><span class="pre">av.subtitles.subtitle.Subtitle</span></code></a></p>
+<dl class="attribute">
+<dt id="av.subtitles.subtitle.AssSubtitle.ass">
+<code class="descname">ass</code><a class="headerlink" href="#av.subtitles.subtitle.AssSubtitle.ass" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo-250.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="audio.html"
+                        title="previous chapter">Audio</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="utils.html"
+                        title="next chapter">Utilities</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/subtitles.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="utils.html" title="Utilities"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="audio.html" title="Audio"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PyAV 0.4.0.dev0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Reference</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Mike Boers.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>
