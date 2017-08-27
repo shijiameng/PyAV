@@ -16,6 +16,12 @@ cdef class _Buffer(object):
     cdef bint _buffer_writable(self):
         return True
 
+    cdef _buffer_shape(self):
+        return
+
+    cdef _buffer_strides(self):
+        return
+
     # Legacy buffer support. For `buffer` and PIL.
     # See: http://docs.python.org/2/c-api/typeobj.html#PyBufferProcs
 
@@ -38,11 +44,17 @@ cdef class _Buffer(object):
         data[0] = self._buffer_ptr()
         return <Py_ssize_t>self._buffer_size()
 
-    # New-style buffer support.
+    # Modern buffer support.
+
     def __getbuffer__(self, Py_buffer *view, int flags):
         if flags & PyBUF_WRITABLE and not self._buffer_writable():
             raise ValueError('buffer is not writable')
         PyBuffer_FillInfo(view, self, self._buffer_ptr(), self._buffer_size(), 0, flags)
+
+    # The presence of this somehow signals to PIL that our planes are writeable
+    # and so it won't accept planes as buffer inputs.
+    #def __releasebuffer__(self, Py_buffer *view):
+    #    pass
 
 
 cdef class Buffer(_Buffer):
