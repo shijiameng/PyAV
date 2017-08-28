@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Overview: module code &#8212; PyAV 0.4.0.dev0 documentation</title>
+    <title>Buffers &#8212; PyAV 0.4.0.dev0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -49,42 +49,37 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <h1>All modules for which code is available</h1>
-<ul><li><a href="av.html">av</a></li>
-<ul><li><a href="av/audio/codeccontext.html">av.audio.codeccontext</a></li>
-<li><a href="av/audio/fifo.html">av.audio.fifo</a></li>
-<li><a href="av/audio/format.html">av.audio.format</a></li>
-<li><a href="av/audio/frame.html">av.audio.frame</a></li>
-<li><a href="av/audio/layout.html">av.audio.layout</a></li>
-<li><a href="av/audio/resampler.html">av.audio.resampler</a></li>
-<li><a href="av/audio/stream.html">av.audio.stream</a></li>
-<li><a href="av/buffer.html">av.buffer</a></li>
-<li><a href="av/codec/codec.html">av.codec.codec</a></li>
-<li><a href="av/codec/context.html">av.codec.context</a></li>
-<li><a href="av/container/core.html">av.container.core</a></li>
-<li><a href="av/container/input.html">av.container.input</a></li>
-<li><a href="av/container/output.html">av.container.output</a></li>
-<li><a href="av/container/streams.html">av.container.streams</a></li>
-<li><a href="av/filter/context.html">av.filter.context</a></li>
-<li><a href="av/filter/filter.html">av.filter.filter</a></li>
-<li><a href="av/filter/graph.html">av.filter.graph</a></li>
-<li><a href="av/filter/link.html">av.filter.link</a></li>
-<li><a href="av/filter/pad.html">av.filter.pad</a></li>
-<li><a href="av/format.html">av.format</a></li>
-<li><a href="av/frame.html">av.frame</a></li>
-<li><a href="av/logging.html">av.logging</a></li>
-<li><a href="av/packet.html">av.packet</a></li>
-<li><a href="av/plane.html">av.plane</a></li>
-<li><a href="av/stream.html">av.stream</a></li>
-<li><a href="av/subtitles/stream.html">av.subtitles.stream</a></li>
-<li><a href="av/subtitles/subtitle.html">av.subtitles.subtitle</a></li>
-<li><a href="av/video/codeccontext.html">av.video.codeccontext</a></li>
-<li><a href="av/video/format.html">av.video.format</a></li>
-<li><a href="av/video/frame.html">av.video.frame</a></li>
-<li><a href="av/video/plane.html">av.video.plane</a></li>
-<li><a href="av/video/reformatter.html">av.video.reformatter</a></li>
-<li><a href="av/video/stream.html">av.video.stream</a></li>
-</ul></ul>
+  <div class="section" id="module-av.buffer">
+<span id="buffers"></span><h1>Buffers<a class="headerlink" href="#module-av.buffer" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="av.buffer.Buffer">
+<em class="property">class </em><code class="descclassname">av.buffer.</code><code class="descname">Buffer</code><a class="headerlink" href="#av.buffer.Buffer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">av.buffer._Buffer</span></code></p>
+<dl class="attribute">
+<dt id="av.buffer.Buffer.buffer_ptr">
+<code class="descname">buffer_ptr</code><a class="headerlink" href="#av.buffer.Buffer.buffer_ptr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.buffer.Buffer.buffer_size">
+<code class="descname">buffer_size</code><a class="headerlink" href="#av.buffer.Buffer.buffer_size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="av.buffer.Buffer.to_bytes">
+<code class="descname">to_bytes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#av.buffer.Buffer.to_bytes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="av.buffer.Buffer.update_buffer">
+<code class="descname">update_buffer</code><span class="sig-paren">(</span><em>input</em><span class="sig-paren">)</span><a class="headerlink" href="#av.buffer.Buffer.update_buffer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replace the data in this object with the given buffer.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
 
           </div>
         </div>
@@ -94,6 +89,13 @@
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/logo-250.png" alt="Logo"/>
             </a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/buffer.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">

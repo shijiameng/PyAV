@@ -29,7 +29,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="top" title="PyAV 0.4.0.dev0 documentation" href="index.html" />
-    <link rel="next" title="License" href="license.html" />
+    <link rel="next" title="Contributors" href="contributors.html" />
     <link rel="prev" title="Wrapped C Types and Functions" href="includes.html" /> 
   </head>
   <body role="document">
@@ -43,7 +43,7 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="license.html" title="License"
+          <a href="contributors.html" title="Contributors"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="includes.html" title="Wrapped C Types and Functions"
@@ -74,7 +74,7 @@ of streams/containers.</li>
 inconsistant <code class="docutils literal"><span class="pre">pts</span></code>.</li>
 <li><code class="docutils literal"><span class="pre">time_base</span></code> use has been revisited across the codebase, and may not be converted
 bettween <code class="docutils literal"><span class="pre">Stream.time_base</span></code> and <code class="docutils literal"><span class="pre">CodecContext.time_base</span></code> at the same times
-in the transociding pipeline.</li>
+in the transcoding pipeline.</li>
 <li><code class="docutils literal"><span class="pre">CodecContext.rate</span></code> has been removed, but proxied to <code class="docutils literal"><span class="pre">VideoCodecContext.framerate</span></code>
 and <code class="docutils literal"><span class="pre">AudioCodecContext.sample_rate</span></code>. The definition is effectively inverted from
 the old one (i.e. for 24fps it used to be <code class="docutils literal"><span class="pre">1/24</span></code> and is now <code class="docutils literal"><span class="pre">24/1</span></code>).</li>
@@ -84,13 +84,17 @@ a float, when previously they converted it from seconds.</li>
 </ul>
 <p>Minor:</p>
 <ul class="simple">
-<li>Added <code class="docutils literal"><span class="pre">Packet.is_keyframe</span></code> and <code class="docutils literal"><span class="pre">Packet.is_corrupt</span></code>. (#226.)</li>
+<li>Added <code class="docutils literal"><span class="pre">Packet.is_keyframe</span></code> and <code class="docutils literal"><span class="pre">Packet.is_corrupt</span></code> (#226).</li>
 <li>Many more <code class="docutils literal"><span class="pre">time_base</span></code>, <code class="docutils literal"><span class="pre">pts</span></code> and other attributes are writeable.</li>
-<li><code class="docutils literal"><span class="pre">Option</span></code> exposes much more of the API (but not get/set). (#243).</li>
+<li><code class="docutils literal"><span class="pre">Option</span></code> exposes much more of the API (but not get/set) (#243).</li>
+<li>Expose metadata encoding controls (#250).</li>
+<li>Expose <code class="docutils literal"><span class="pre">CodecContext.skip_frame</span></code> (#259).</li>
 </ul>
 <p>Fixes:</p>
 <ul class="simple">
-<li>Build doesn&#8217;t fail if you don&#8217;t have git installed. (#184.)</li>
+<li>Build doesn&#8217;t fail if you don&#8217;t have git installed (#184).</li>
+<li>Developer environment works better with Python3 (#248).</li>
+<li>Fix Container deallocation resulting in segfaults (#253).</li>
 </ul>
 </div>
 <div class="section" id="v0-3-3">
@@ -266,8 +270,8 @@ Changes include, but are not limited to:</p>
   <p class="topless"><a href="includes.html"
                         title="previous chapter">Wrapped C Types and Functions</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="license.html"
-                        title="next chapter">License</a></p>
+  <p class="topless"><a href="contributors.html"
+                        title="next chapter">Contributors</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -299,7 +303,7 @@ Changes include, but are not limited to:</p>
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="license.html" title="License"
+          <a href="contributors.html" title="Contributors"
              >next</a> |</li>
         <li class="right" >
           <a href="includes.html" title="Wrapped C Types and Functions"

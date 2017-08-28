@@ -1,0 +1,357 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Filters &#8212; PyAV 0.4.0.dev0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.4.0.dev0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="PyAV 0.4.0.dev0 documentation" href="../index.html" />
+    <link rel="up" title="Reference" href="index.html" />
+    <link rel="next" title="Video" href="video.html" />
+    <link rel="prev" title="Frames" href="frame.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="video.html" title="Video"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="frame.html" title="Frames"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PyAV 0.4.0.dev0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Reference</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-av.filter.filter">
+<span id="filters"></span><h1>Filters<a class="headerlink" href="#module-av.filter.filter" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="av.filter.filter.Filter">
+<em class="property">class </em><code class="descclassname">av.filter.filter.</code><code class="descname">Filter</code><a class="headerlink" href="#av.filter.filter.Filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="attribute">
+<dt id="av.filter.filter.Filter.command_support">
+<code class="descname">command_support</code><a class="headerlink" href="#av.filter.filter.Filter.command_support" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.filter.filter.Filter.description">
+<code class="descname">description</code><a class="headerlink" href="#av.filter.filter.Filter.description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.filter.filter.Filter.descriptor">
+<code class="descname">descriptor</code><a class="headerlink" href="#av.filter.filter.Filter.descriptor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.filter.filter.Filter.dynamic_inputs">
+<code class="descname">dynamic_inputs</code><a class="headerlink" href="#av.filter.filter.Filter.dynamic_inputs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.filter.filter.Filter.dynamic_outputs">
+<code class="descname">dynamic_outputs</code><a class="headerlink" href="#av.filter.filter.Filter.dynamic_outputs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.filter.filter.Filter.flags">
+<code class="descname">flags</code><a class="headerlink" href="#av.filter.filter.Filter.flags" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.filter.filter.Filter.inputs">
+<code class="descname">inputs</code><a class="headerlink" href="#av.filter.filter.Filter.inputs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.filter.filter.Filter.name">
+<code class="descname">name</code><a class="headerlink" href="#av.filter.filter.Filter.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.filter.filter.Filter.options">
+<code class="descname">options</code><a class="headerlink" href="#av.filter.filter.Filter.options" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.filter.filter.Filter.outputs">
+<code class="descname">outputs</code><a class="headerlink" href="#av.filter.filter.Filter.outputs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.filter.filter.Filter.slice_threads">
+<code class="descname">slice_threads</code><a class="headerlink" href="#av.filter.filter.Filter.slice_threads" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.filter.filter.Filter.timeline_support">
+<code class="descname">timeline_support</code><a class="headerlink" href="#av.filter.filter.Filter.timeline_support" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-av.filter.graph"></span><dl class="class">
+<dt id="av.filter.graph.Graph">
+<em class="property">class </em><code class="descclassname">av.filter.graph.</code><code class="descname">Graph</code><a class="headerlink" href="#av.filter.graph.Graph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="method">
+<dt id="av.filter.graph.Graph.add">
+<code class="descname">add</code><span class="sig-paren">(</span><em>filter</em>, <em>args=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#av.filter.graph.Graph.add" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="av.filter.graph.Graph.add_buffer">
+<code class="descname">add_buffer</code><span class="sig-paren">(</span><em>template=None</em>, <em>width=None</em>, <em>height=None</em>, <em>format=None</em>, <em>name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#av.filter.graph.Graph.add_buffer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="av.filter.graph.Graph.configure">
+<code class="descname">configure</code><span class="sig-paren">(</span><em>bool auto_buffer=True</em>, <em>bool force=False</em><span class="sig-paren">)</span><a class="headerlink" href="#av.filter.graph.Graph.configure" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.filter.graph.Graph.configured">
+<code class="descname">configured</code><a class="headerlink" href="#av.filter.graph.Graph.configured" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="av.filter.graph.Graph.pull">
+<code class="descname">pull</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#av.filter.graph.Graph.pull" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="av.filter.graph.Graph.push">
+<code class="descname">push</code><span class="sig-paren">(</span><em>frame</em><span class="sig-paren">)</span><a class="headerlink" href="#av.filter.graph.Graph.push" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-av.filter.context"></span><dl class="class">
+<dt id="av.filter.context.FilterContext">
+<em class="property">class </em><code class="descclassname">av.filter.context.</code><code class="descname">FilterContext</code><a class="headerlink" href="#av.filter.context.FilterContext" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="attribute">
+<dt id="av.filter.context.FilterContext.filter">
+<code class="descname">filter</code><a class="headerlink" href="#av.filter.context.FilterContext.filter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.filter.context.FilterContext.graph">
+<code class="descname">graph</code><a class="headerlink" href="#av.filter.context.FilterContext.graph" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="av.filter.context.FilterContext.init">
+<code class="descname">init</code><span class="sig-paren">(</span><em>args=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#av.filter.context.FilterContext.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.filter.context.FilterContext.inputs">
+<code class="descname">inputs</code><a class="headerlink" href="#av.filter.context.FilterContext.inputs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="av.filter.context.FilterContext.link_to">
+<code class="descname">link_to</code><span class="sig-paren">(</span><em>FilterContext input_</em>, <em>int output_idx=0</em>, <em>int input_idx=0</em><span class="sig-paren">)</span><a class="headerlink" href="#av.filter.context.FilterContext.link_to" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.filter.context.FilterContext.name">
+<code class="descname">name</code><a class="headerlink" href="#av.filter.context.FilterContext.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.filter.context.FilterContext.outputs">
+<code class="descname">outputs</code><a class="headerlink" href="#av.filter.context.FilterContext.outputs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="av.filter.context.FilterContext.pull">
+<code class="descname">pull</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#av.filter.context.FilterContext.pull" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="av.filter.context.FilterContext.push">
+<code class="descname">push</code><span class="sig-paren">(</span><em>Frame frame</em><span class="sig-paren">)</span><a class="headerlink" href="#av.filter.context.FilterContext.push" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-av.filter.link"></span><dl class="class">
+<dt id="av.filter.link.FilterLink">
+<em class="property">class </em><code class="descclassname">av.filter.link.</code><code class="descname">FilterLink</code><a class="headerlink" href="#av.filter.link.FilterLink" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="attribute">
+<dt id="av.filter.link.FilterLink.graph">
+<code class="descname">graph</code><a class="headerlink" href="#av.filter.link.FilterLink.graph" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.filter.link.FilterLink.input">
+<code class="descname">input</code><a class="headerlink" href="#av.filter.link.FilterLink.input" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.filter.link.FilterLink.output">
+<code class="descname">output</code><a class="headerlink" href="#av.filter.link.FilterLink.output" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-av.filter.pad"></span><dl class="class">
+<dt id="av.filter.pad.FilterPad">
+<em class="property">class </em><code class="descclassname">av.filter.pad.</code><code class="descname">FilterPad</code><a class="headerlink" href="#av.filter.pad.FilterPad" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="attribute">
+<dt id="av.filter.pad.FilterPad.context">
+<code class="descname">context</code><a class="headerlink" href="#av.filter.pad.FilterPad.context" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.filter.pad.FilterPad.filter">
+<code class="descname">filter</code><a class="headerlink" href="#av.filter.pad.FilterPad.filter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.filter.pad.FilterPad.index">
+<code class="descname">index</code><a class="headerlink" href="#av.filter.pad.FilterPad.index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.filter.pad.FilterPad.is_input">
+<code class="descname">is_input</code><a class="headerlink" href="#av.filter.pad.FilterPad.is_input" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.filter.pad.FilterPad.is_output">
+<code class="descname">is_output</code><a class="headerlink" href="#av.filter.pad.FilterPad.is_output" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.filter.pad.FilterPad.name">
+<code class="descname">name</code><a class="headerlink" href="#av.filter.pad.FilterPad.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.filter.pad.FilterPad.type">
+<code class="descname">type</code><a class="headerlink" href="#av.filter.pad.FilterPad.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="av.filter.pad.FilterContextPad">
+<em class="property">class </em><code class="descclassname">av.filter.pad.</code><code class="descname">FilterContextPad</code><a class="headerlink" href="#av.filter.pad.FilterContextPad" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#av.filter.pad.FilterPad" title="av.filter.pad.FilterPad"><code class="xref py py-class docutils literal"><span class="pre">av.filter.pad.FilterPad</span></code></a></p>
+<dl class="attribute">
+<dt id="av.filter.pad.FilterContextPad.link">
+<code class="descname">link</code><a class="headerlink" href="#av.filter.pad.FilterContextPad.link" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="av.filter.pad.FilterContextPad.linked">
+<code class="descname">linked</code><a class="headerlink" href="#av.filter.pad.FilterContextPad.linked" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo-250.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="frame.html"
+                        title="previous chapter">Frames</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="video.html"
+                        title="next chapter">Video</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/filter.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="video.html" title="Video"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="frame.html" title="Frames"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PyAV 0.4.0.dev0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Reference</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Mike Boers.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    </div>
+  </body>
+</html>
