@@ -25,6 +25,7 @@ cdef class Descriptor(object):
 
             cdef lib.AVOption *ptr = self.ptr.option
             cdef lib.AVOption *choice_ptr
+            cdef bint is_default
 
             options = []
 
@@ -39,7 +40,14 @@ cdef class Descriptor(object):
                         if choice_ptr.type != lib.AV_OPT_TYPE_CONST or choice_ptr.unit != ptr.unit:
                             choice_ptr += 1
                             continue
-                        choices.append(wrap_option_choice(choice_ptr))
+
+                        is_default = (
+                            choice_ptr.default_val.i64 == ptr.default_val.i64 or
+                            ptr.type == lib.AV_OPT_TYPE_FLAGS and
+                            choice_ptr.default_val.i64 & ptr.default_val.i64
+                        )
+
+                        choices.append(wrap_option_choice(choice_ptr, is_default))
                         choice_ptr += 1
                 options.append(wrap_option(tuple(choices), ptr))
                 ptr += 1
