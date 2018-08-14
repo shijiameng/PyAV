@@ -2,6 +2,7 @@ from libc.stdint cimport int64_t
 from libc.stdlib cimport malloc, free
 
 import sys
+import socket
 
 cimport libav as lib
 
@@ -202,6 +203,9 @@ cdef class Container(object):
 
         if isinstance(file_, basestring):
             self.name = file_
+        elif isinstance(file_, file) or isinstance(file_, socket.socket):
+            self.name = None
+            self.file = file_
         else:
             self.name = getattr(file_, 'name', '<none>')
             if not isinstance(self.name, basestring):
@@ -235,7 +239,7 @@ def open(file, mode=None, format=None, options=None, metadata_encoding=None, met
 
     Main entrypoint to opening files/streams.
 
-    :param str file: The file to open.
+    :param obj file: The file to open. (may be a path, url, file object or socket object)
     :param str mode: ``"r"`` for reading and ``"w"`` for writing.
     :param str format: Specific format to use. Defaults to autodect.
     :param dict options: Options to pass to the container and streams.
