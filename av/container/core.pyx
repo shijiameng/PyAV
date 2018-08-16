@@ -2,7 +2,6 @@ from libc.stdint cimport int64_t
 from libc.stdlib cimport malloc, free
 
 import sys
-import socket
 
 cimport libav as lib
 
@@ -44,9 +43,14 @@ cdef class ContainerProxy(object):
         self.metadata_errors = container.metadata_errors
         self.name = container.name
         self.writeable = container.writeable
-
+              
         cdef bytes name_obj = fsencode(self.name) if isinstance(self.name, unicode) else self.name
-        cdef char *name = name_obj
+        cdef char *name
+        
+        if name_obj:
+            name = name_obj
+        else:
+            name = <char *>NULL
 
         cdef lib.AVOutputFormat *ofmt
         if self.writeable:
@@ -76,7 +80,11 @@ cdef class ContainerProxy(object):
 
             # TODO: Make sure we actually have these.
             self.fread = getattr(self.file, 'read', None)
+            if not self.fread:
+                self.fread = getattr(self.file, 'recv', None)
             self.fwrite = getattr(self.file, 'write', None)
+            if not self.fwrite:
+                self.fwrite = getattr(self.file, 'send', None)
             self.fseek = getattr(self.file, 'seek', None)
             self.ftell = getattr(self.file, 'tell', None)
 
@@ -91,9 +99,9 @@ cdef class ContainerProxy(object):
                 self.buffer, self.bufsize,
                 self.writeable, # Writeable.
                 <void*>self, # User data.
-                pyio_read,
-                pyio_write,
-                pyio_seek
+                pyio_read if self.fread else <int (*)(void *opaque, unsigned char *buf, int buf_size) nogil>NULL,
+                pyio_write if self.fwrite and self.writeable else <int (*)(void *opaque, unsigned char *buf, int buf_size) nogil>NULL,
+                pyio_seek if self.fseek else <int64_t (*)(void *, int64_t, int) nogil>NULL
             )
             # Various tutorials say that we should set AVFormatContext.direct
             # to AVIO_FLAG_DIRECT here, but that doesn't seem to do anything in
@@ -203,9 +211,6 @@ cdef class Container(object):
 
         if isinstance(file_, basestring):
             self.name = file_
-        elif isinstance(file_, file) or isinstance(file_, socket.socket):
-            self.name = None
-            self.file = file_
         else:
             self.name = getattr(file_, 'name', '<none>')
             if not isinstance(self.name, basestring):
