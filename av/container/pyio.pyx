@@ -15,6 +15,8 @@ cdef int pyio_read_gil(void *opaque, uint8_t *buf, int buf_size):
     cdef bytes res
     try:
         self = <ContainerProxy>opaque
+        if not self.fread:
+            return -1
         res = self.fread(buf_size)
         memcpy(buf, <void*><char*>res, len(res))
         self.pos += len(res)
@@ -35,6 +37,8 @@ cdef int pyio_write_gil(void *opaque, uint8_t *buf, int buf_size):
     cdef int bytes_written
     try:
         self = <ContainerProxy>opaque
+        if not self.fwrite:
+            return -1
         bytes_to_write = buf[:buf_size]
         ret_value = self.fwrite(bytes_to_write)
         bytes_written = ret_value if isinstance(ret_value, int) else buf_size
@@ -57,6 +61,8 @@ cdef int64_t pyio_seek_gil(void *opaque, int64_t offset, int whence):
     cdef ContainerProxy self
     try:
         self = <ContainerProxy>opaque
+        if not self.fseek:
+            return -1
         res = self.fseek(offset, whence)
 
         # Track the position for the user.

@@ -45,8 +45,13 @@ cdef class ContainerProxy(object):
         self.writeable = container.writeable
 
         cdef bytes name_obj = fsencode(self.name) if isinstance(self.name, unicode) else self.name
-        cdef char *name = name_obj
-
+        cdef char *name
+        
+        if name_obj:
+            name = name_obj
+        else:
+            name = <char *>NULL
+ 
         cdef lib.AVOutputFormat *ofmt
         if self.writeable:
 
@@ -74,8 +79,8 @@ cdef class ContainerProxy(object):
         # Setup Python IO.
         if self.file is not None:
 
-            self.fread = getattr(self.file, 'read', None)
-            self.fwrite = getattr(self.file, 'write', None)
+            self.fread = getattr(self.file, 'read', getattr(self.file, 'recv', None))
+            self.fwrite = getattr(self.file, 'write', getattr(self.file, 'send', None))
             self.fseek = getattr(self.file, 'seek', None)
             self.ftell = getattr(self.file, 'tell', None)
 
